@@ -26,11 +26,13 @@ This is just a short list of ideas, if you have other ideas for contributing ple
 
 ### I've found a typo
 
-* A Pull Request is not necessary. Raise an [Issue](https://github.com/openfaas/faas/issues) and we'll fix it as soon as we can. 
+* A Pull Request is not necessary. Raise an [Issue](https://github.com/Lambda-NIC/faas/issues) and we'll fix it as soon as we can. 
 
 ### I have a (great) idea
 
 The OpenFaaS maintainers would like to make OpenFaaS the best it can be and welcome new contributions that align with the project's goals. Our time is limited so we'd like to make sure we agree on the proposed work before you spend time doing it. Saying "no" is hard which is why we'd rather say "yes" ahead of time. You need to raise a proposal.
+
+Every feature carries a cost - a cost if developed wrong, a cost to carry and maintain it and if it wasn't needed in the first place then this is an unnecessary burden. See [Yagni from Martin Fowler](https://martinfowler.com/bliki/Yagni.html). The best proposals are defensible with real data and are more than a hypothesis.
 
 **Please do not raise a proposal after doing the work - this is counter to the spirit of the project. It is hard to be objective about something which has already been done**
 
@@ -188,11 +190,11 @@ This project is written in Golang but many of the community contributions so far
 
 ### Community file
 
-The [community.md](https://github.com/openfaas/faas/blob/master/community.md) file highlights blogs, talks and code repos with example FaaS functions and usages. Please send a Pull Request if you are doing something cool with FaaS.
+The [community.md](https://github.com/Lambda-NIC/faas/blob/master/community.md) file highlights blogs, talks and code repos with example FaaS functions and usages. Please send a Pull Request if you are doing something cool with FaaS.
 
 ### Roadmap
 
-Checkout the [roadmap](https://github.com/openfaas/faas/blob/master/ROADMAP.md) and [open issues](https://github.com/openfaas/faas/issues).
+Checkout the [roadmap](https://github.com/Lambda-NIC/faas/blob/master/ROADMAP.md) and [open issues](https://github.com/Lambda-NIC/faas/issues).
 
 ### Slack
 

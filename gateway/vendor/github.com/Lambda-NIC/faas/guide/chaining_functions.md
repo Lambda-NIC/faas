@@ -90,4 +90,4 @@ You can update your code to call another function / store state in another servi
 
 * X-Callback-Url
 
-If you set a header for `X-Callback-Url` then that will be invoked after the function has run, [read more](https://github.com/openfaas/faas/blob/1aa6270fcc274cc36d90e0a9e4caa3eb71912ae0/guide/asynchronous.md#call-a-function)
+If you set a header for `X-Callback-Url` then that will be invoked after the function has run, [read more](https://github.com/Lambda-NIC/faas/blob/1aa6270fcc274cc36d90e0a9e4caa3eb71912ae0/guide/asynchronous.md#call-a-function)

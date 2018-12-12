@@ -2,20 +2,21 @@
 
 
 [[projects]]
-  digest = "1:c7994362c0372464c7da35dca2ccbb0e7ed2f50b8a968fe9203883186710e6f1"
+  branch = "master"
+  digest = "1:4be0a2c6091d245451d7e1e670b53aae189951d1add26ac415222cbc3ac32aca"
   name = "github.com/Lambda-NIC/faas"
   packages = [
     "gateway/handlers",
     "gateway/metrics",
     "gateway/plugin",
+    "gateway/queue",
     "gateway/requests",
     "gateway/scaling",
     "gateway/types",
     "gateway/version",
   ]
   pruneopts = ""
-  revision = "78a4584019a2a5d86b606a00b4fba979930cc2a7"
-  version = "0.9.11"
+  revision = "490d8e7f4c8212f156eddd510ff5182bc3db211c"
 
 [[projects]]
   branch = "master"
@@ -133,29 +134,6 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:c7994362c0372464c7da35dca2ccbb0e7ed2f50b8a968fe9203883186710e6f1"
-  name = "github.com/openfaas/faas"
-  packages = [
-    "gateway/metrics",
-    "gateway/queue",
-    "gateway/requests",
-    "gateway/scaling",
-    "gateway/types",
-    "gateway/version",
-  ]
-  pruneopts = ""
-  revision = "78a4584019a2a5d86b606a00b4fba979930cc2a7"
-  version = "0.9.11"
-
-[[projects]]
-  digest = "1:c437519be7955b76d5020f186b1550d85e1c88ae46afdca97c213504cb76f150"
-  name = "github.com/openfaas/faas-provider"
-  packages = ["auth"]
-  pruneopts = ""
-  revision = "8b3147b013c651d5f017b31fa1225ae21e1dc93d"
-  version = "0.8.0"
-
-[[projects]]
   digest = "1:4142d94383572e74b42352273652c62afec5b23f325222ed09198f46009022d1"
   name = "github.com/prometheus/client_golang"
   packages = ["prometheus"]
@@ -215,6 +193,7 @@
     "github.com/Lambda-NIC/faas/gateway/handlers",
     "github.com/Lambda-NIC/faas/gateway/metrics",
     "github.com/Lambda-NIC/faas/gateway/plugin",
+    "github.com/Lambda-NIC/faas/gateway/queue",
     "github.com/Lambda-NIC/faas/gateway/requests",
     "github.com/Lambda-NIC/faas/gateway/scaling",
     "github.com/Lambda-NIC/faas/gateway/types",

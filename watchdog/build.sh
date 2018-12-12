@@ -24,10 +24,10 @@ fi
 
 docker create --name buildoutput openfaas/watchdog:build echo
 
-docker cp buildoutput:/go/src/github.com/openfaas/faas/watchdog/watchdog ./fwatchdog
-docker cp buildoutput:/go/src/github.com/openfaas/faas/watchdog/watchdog-armhf ./fwatchdog-armhf
-docker cp buildoutput:/go/src/github.com/openfaas/faas/watchdog/watchdog-arm64 ./fwatchdog-arm64
-docker cp buildoutput:/go/src/github.com/openfaas/faas/watchdog/watchdog.exe ./fwatchdog.exe
+docker cp buildoutput:/go/src/github.com/Lambda-NIC/faas/watchdog/watchdog ./fwatchdog
+docker cp buildoutput:/go/src/github.com/Lambda-NIC/faas/watchdog/watchdog-armhf ./fwatchdog-armhf
+docker cp buildoutput:/go/src/github.com/Lambda-NIC/faas/watchdog/watchdog-arm64 ./fwatchdog-arm64
+docker cp buildoutput:/go/src/github.com/Lambda-NIC/faas/watchdog/watchdog.exe ./fwatchdog.exe
 
 docker rm buildoutput
 

@@ -19,7 +19,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/openfaas/faas/watchdog/types"
+	"github.com/Lambda-NIC/faas/watchdog/types"
 )
 
 var (

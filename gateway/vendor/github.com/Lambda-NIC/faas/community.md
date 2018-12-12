@@ -48,8 +48,8 @@ Official providers developed and supported by the OpenFaaS project
 
 | Project name and description                                         | Author     | Site      | Status      |
 |----------------------------------------------------------------------|------------|-----------|-------------|
-| **faas-netes**- Kubernetes provider | OpenFaaS | [github.com](https://github.com/openfaas/faas-netes) | Supported |
-| **faas-swarm** - Docker Swarm provider | OpenFaaS | [github.com](https://github.com/openfaas/faas-swarm) | Supported |
+| **faas-netes**- Kubernetes provider | OpenFaaS | [github.com](https://github.com/Lambda-NIC/faas-netes) | Supported |
+| **faas-swarm** - Docker Swarm provider | OpenFaaS | [github.com](https://github.com/Lambda-NIC/faas-swarm) | Supported |
 | **openfaas-operator** - Kubernetes Operator provider | OpenFaaS | [github.com](https://github.com/openfaas-incubator/openfaas-operator) | Incubation |
 
 Community providers actively being developed and/or supported by a third-party
@@ -79,9 +79,14 @@ Key:
 | Event name and description                                          | Speaker      | Location | Date        |
 |---------------------------------------------------------------------|--------------|----------|-------------|
 | [KubeCon + CloudNativeCon: Digital Transformation of Vision Banco Paraguay with Serverless Functions](https://sched.co/GraO) | Alex Ellis & Patricio Diaz | Seattle, WA | 13-Dec-2018 |
+| [Serverless com OpenFaaS e PHP @ PHP Conference Brazil](https://phpconference.com.br) | Fernando Silva | Porto Alegre, BR | 07-Dec-2018 |
 | [The FaaS & The Furious](https://www.meetup.com/CloudAustin/events/gxwbkpyxpbbc/) | Burton Rheutan | Austin, TX | 27-Nov-2018 |
 | [GOTO Copenhagen: Serverless Beyond the Hype](https://gotocph.com/2018/sessions/592) | Alex Ellis | Copenhagen, DK | 19-Nov-2018 |
+| [OpenFaaS workshop @ Capitole du Libre](https://2018.capitoledulibre.org/) | [Laurent Grangeau](https://twitter.com/laurentgrangeau) <br /> [Adrien Blind](https://twitter.com/adrienBlind) <br /> [Ludovic Piot](https://twitter.com/lpiot)| Toulouse, France | 18-Nov-2018 |
 | [OpenFaas on Kubernetes](https://www.meetup.com/kubernetes-openshift-India-Meetup/events/255794614) | Vivek Singh| Bangalore, IN | 17-Nov-2018 |
+| [🚀 2+ years of feedback @ Capitole du Libre](https://2018.capitoledulibre.org/) | [Laurent Grangeau](https://twitter.com/laurentgrangeau) <br /> [Adrien Blind](https://twitter.com/adrienBlind) <br /> [Ludovic Piot](https://twitter.com/lpiot) | Toulouse, France | 17-Nov-2018 |
+| [Functions as a Service - The Easy Way](https://www.istacon.org) | [Ivana Yovcheva](https://twitter.com/ivanabyov) | Sofia, Bulgaria | 15-Nov-2018 |
+| [OpenFaaS : a serverless framework on top of Docker and Kubernetes @ DevOpsDDay](https://2018.devops-dday.com/) | [Laurent Grangeau](https://twitter.com/laurentgrangeau) | Marseille, France | 15-Nov-2018 |
 | [ Serverless Computing London: FaaS and Furious – 0 to Serverless in 60 Seconds, Anywhere](https://serverlesscomputing.london/sessions/faas-furious-0-serverless-60-seconds-anywhere/) | Alex Ellis | London, UK | 12-Nov-2018 |
 | [Open Source Summit Europe: Introducing OpenFaaS Cloud, a Developer-Friendly CI/CD Pipeline for Serverless](https://osseu18.sched.com/event/FxXx/introducing-openfaas-cloud-a-developer-friendly-cicd-pipeline-for-serverless-alex-ellis-openfaas-project-vmware) | Alex Ellis | Edinburgh, Scotland | 22-Oct-2018 |
 | Exploring the serverless framework with OpenFaaS @ DevFest Nantes | [Emmanuel Lebeaupin](https://twitter.com/elebeaup) | Nantes, France | 19-Oct-2018 |
@@ -89,8 +94,11 @@ Key:
 | [DevOpenSpace - Mühelos Serverless mit GitOps](https://github.com/fpommerening/DevOpenSpace2018) | Frank Pommerening | Leipzig, Germany | 12-Oct-2018 |
 | [ScotlandPHP - Starting your Serverless Journey with OpenFaaS](https://conference.scotlandphp.co.uk/) | John McCabe | Edinburgh, Scotland | 6-Oct-2018 |
 | [VMUG Ireland - Serverless, OpenFaaS and GitOps on Kubernetes](https://community.vmug.com/events/event-description?CalendarEventKey=081889a6-3ea0-451b-b5df-e3985fbe8256&CommunityKey=8c80c6de-4f79-4717-b7d1-55a43ba44624) | John McCabe | Dublin, Ireland | 4-Oct-2018 |
+| [Writing Serverless functions in Python](https://www.openfest.org/2018/en/) | [Ivana Yovcheva](https://twitter.com/ivanabyov) | Sofia, Bulgaria | 3-Nov-2018 |
+| [Serverless functions made simple with Kubernetes (lightning talk)](https://www.openfest.org/2018/en/) | [Ivana Yovcheva](https://twitter.com/ivanabyov) | Sofia, Bulgaria | 3-Nov-2018 |
 | [Serverlessconf Tokyo 2018 OpenFaaS Workshop](http://tokyo.serverlessconf.io/workshops.html) | Ken Fukuyama | Tokyo, JP | 28-Sep-2018 |
 | [Building Cloud-Native Apps - FaaS: The Swiss Army Knife of Cloud Native](https://www.meetup.com/Cloud_Native_Meetup/events/254232936/) | James McAfee | Sydney, Australia | 12-Sep-2018 |
+| [ Creating Your First Serverless Function with OpenFaaS - VMworld 2018](https://www.youtube.com/watch?v=xiLkq1zQldE&t) | Kendrick Coleman | Las Vegas, NV, USA |28-Aug-2018 |
 | [ John Callaway: .NET Core on a Raspberry Pi Cluster with Docker and OpenFaaS](https://secure.meetup.com/register/?ctx=ref) | John Callaway | Orlando, FL, USA |16-Aug-2018 |
 | [Cloud Native Glasgow - Serverless on Kubernetes](https://www.meetup.com/CloudNativeGlasgow/events/251913059/) | John McCabe | Glasgow, UK | 5-July-2018 |
 | [Opsview & Kubernetes (incl. OpenFaaS)](https://www.meetup.com/Birmingham-digital-development-Meetup/events/250680464/) | Opsview | Birmingham, UK | 28-June-2018 |
@@ -132,9 +140,12 @@ Key:
 
 | Blog/repo name and description                                          | Author       | Site     | Date        |
 |---------------------------------------------------------------------|--------------|----------|-------------|
+| [.Net Core – OpenFaas – MongoDB](https://marcussmallman.io/2018/11/27/net-core-openfaas-mongodb/) | Marcus Smallman | marcussmallman.io | 28-Nov-2018 |
+| [Micro-tutorial: use Redis & Node.js with OpenFaaS](https://gist.github.com/alexellis/e05a7b573ae22b209f0214d5766ff07e) | Alex Ellis | github.com | 24-Nov-2018 |
 | [🇬🇧 Use Vert.x with OpenFaaS](https://k33g.gitlab.io/articles/2018-11-11-OPENFAAS.html) | Philippe Charrière | GitLab.com | 11-Nov-2018 |
 | [Serverless Computing: More Time for the Code](https://www.golem.de/news/serverless-computing-mehr-zeit-fuer-den-code-1811-137516-5.html) | Valentin Höbel | golem.de | 08-Nov-2018 |
 | [Using GraphQL in OpenFaaS functions](https://padiazg.github.io/graphql-on-opesfaas/) | Patricio Díaz | padiazg.github.io | 03-Nov-2018 |
+| [Micro-tutorial: Learn how to run OpenFaaS Function Store functions on Knative](https://gist.github.com/alexellis/5c1587cf24b634f940764427d50719bf) | Alex Ellis | github.com | 30-Oct-2018 |
 | [🇬🇧-use-express-with-openfaas](https://k33g.gitlab.io/articles/2018-10-28-OPENFAAS.html) | Philippe Charrière | GitLab.com | 28-Oct-2018 |
 | [First contact with OpenFaaS](https://k33g.gitlab.io/articles/2018-10-20-OPENFAAS.html) | Philippe Charrière | GitLab.com | 20-Oct-2018 |
 | [ACI Information Group: OpenFaaS among wish-list items for AWS Lambda](https://searchaws.techtarget.com/opinion/Lambda-support-for-OpenFaaS-among-wish-list-items) | Chris Moyer | techtarget.com | 11-Oct-2018 |
@@ -294,6 +305,7 @@ You can also find cool projects or submit your own to the [faas-and-furious orga
 
 | Project name and description                                         | Author     | Site      | Date        |
 |----------------------------------------------------------------------|------------|-----------|-------------|
+| [OpenFaas CSharp MongoDB Template](https://github.com/Marcus-Smallman/csharp-kestrel-mongo) | Marcus Smallman | github.com | 28-Nov-2018 |
 | [OpenFaas Java 8 + Vert.x Template](https://gitlab.com/openfaas-experiments/java-8-vert-x-template) | Philippe Charrière | gitlab.com | 11-Nov-2018 |
 | [Faasflow - faas workflow as a function](https://github.com/s8sg/faasflow) | Swarvanu Sengupta | github.com | 11-Nov-2018 |
 | [OpenFaaS Crystal Template](https://github.com/TPei/crystal_openfaas) | Thomas Peikert | github.com | 26-Oct-2018 |
@@ -309,7 +321,7 @@ You can also find cool projects or submit your own to the [faas-and-furious orga
 | [Github - Reverse geocoding](https://github.com/lucj/faas-reverse-geocoding) | Luc Juggery | github.com | 14-Sep-2017 |
 | [QR Code](https://github.com/faas-and-furious/qrcode) | John McCabe | github.com | 18-Aug-2017 |
 | [Img2ANSI - GIF/PNG/JPG to ANSI art converter](https://github.com/johnmccabe/faas-img2ansi/) | John McCabe | github.com | 10-Aug-2017 |
-| [FaaS-netes - Kubernetes backend for FaaS](https://github.com/openfaas/faas-netes) | Alex Ellis | github.com | 25-Jul-2017 |
+| [FaaS-netes - Kubernetes backend for FaaS](https://github.com/Lambda-NIC/faas-netes) | Alex Ellis | github.com | 25-Jul-2017 |
 | [Twitter, Elastic Search and Alexa stack of functions](https://github.com/alexellis/journey-expert/tree/master/tweetstash) | Alex Ellis | github.com | 24-Apr-2017 |
 | [Github - URL Shortener](https://github.com/developius/faas-node-url-shortener) | Finnian Anderson | [developius/faas-node-url-shortener](https://github.com/developius/faas-node-url-shortener) | 19-Apr-2017 |
 | [Github - fibonacci numbers up to N](https://github.com/developius/faas-python-fib/) | Finnian Anderson | [developius/faas-python-fib/](https://github.com/developius/faas-python-fib/) | 19-Apr-2017 |

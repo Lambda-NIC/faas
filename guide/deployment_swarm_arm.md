@@ -1,6 +1,6 @@
 # Deployment guide for Docker Swarm on ARM
 
-> Note: The best place to start if you're new to OpenFaaS is the README file in the [openfaas/faas](https://github.com/openfaas/faas/blob/master/README.md) repository.
+> Note: The best place to start if you're new to OpenFaaS is the README file in the [openfaas/faas](https://github.com/Lambda-NIC/faas/blob/master/README.md) repository.
 
 ## 32-bit ARM (armhf) - i.e. Raspberry Pi 2 or 3
 
@@ -51,13 +51,13 @@ It's also important to pass the `--advertise-addr` string to any hosts which hav
 Clone OpenFaaS and then checkout the latest stable release:
 
 ```sh
-$ git clone https://github.com/openfaas/faas && \
+$ git clone https://github.com/Lambda-NIC/faas && \
   cd faas && \
   git checkout 0.7.8 && \
   ./deploy_stack.armhf.sh
 ```
 
-`./deploy_stack.armhf.sh` can be run at any time and includes a set of sample functions. You can read more about these in the [TestDrive document](https://github.com/openfaas/faas/blob/master/TestDrive.md)
+`./deploy_stack.armhf.sh` can be run at any time and includes a set of sample functions. You can read more about these in the [TestDrive document](https://github.com/Lambda-NIC/faas/blob/master/TestDrive.md)
 
 ### Test out the UI
 

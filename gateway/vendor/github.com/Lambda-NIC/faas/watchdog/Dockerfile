@@ -2,8 +2,8 @@ FROM golang:1.9.7 as build
 ARG VERSION
 ARG GIT_COMMIT
 
-RUN mkdir -p /go/src/github.com/openfaas/faas/watchdog
-WORKDIR /go/src/github.com/openfaas/faas/watchdog
+RUN mkdir -p /go/src/github.com/Lambda-NIC/faas/watchdog
+WORKDIR /go/src/github.com/Lambda-NIC/faas/watchdog
 
 COPY main.go            	.
 COPY handler.go			.

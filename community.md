@@ -48,8 +48,8 @@ Official providers developed and supported by the OpenFaaS project
 
 | Project name and description                                         | Author     | Site      | Status      |
 |----------------------------------------------------------------------|------------|-----------|-------------|
-| **faas-netes**- Kubernetes provider | OpenFaaS | [github.com](https://github.com/openfaas/faas-netes) | Supported |
-| **faas-swarm** - Docker Swarm provider | OpenFaaS | [github.com](https://github.com/openfaas/faas-swarm) | Supported |
+| **faas-netes**- Kubernetes provider | OpenFaaS | [github.com](https://github.com/Lambda-NIC/faas-netes) | Supported |
+| **faas-swarm** - Docker Swarm provider | OpenFaaS | [github.com](https://github.com/Lambda-NIC/faas-swarm) | Supported |
 | **openfaas-operator** - Kubernetes Operator provider | OpenFaaS | [github.com](https://github.com/openfaas-incubator/openfaas-operator) | Incubation |
 
 Community providers actively being developed and/or supported by a third-party
@@ -321,7 +321,7 @@ You can also find cool projects or submit your own to the [faas-and-furious orga
 | [Github - Reverse geocoding](https://github.com/lucj/faas-reverse-geocoding) | Luc Juggery | github.com | 14-Sep-2017 |
 | [QR Code](https://github.com/faas-and-furious/qrcode) | John McCabe | github.com | 18-Aug-2017 |
 | [Img2ANSI - GIF/PNG/JPG to ANSI art converter](https://github.com/johnmccabe/faas-img2ansi/) | John McCabe | github.com | 10-Aug-2017 |
-| [FaaS-netes - Kubernetes backend for FaaS](https://github.com/openfaas/faas-netes) | Alex Ellis | github.com | 25-Jul-2017 |
+| [FaaS-netes - Kubernetes backend for FaaS](https://github.com/Lambda-NIC/faas-netes) | Alex Ellis | github.com | 25-Jul-2017 |
 | [Twitter, Elastic Search and Alexa stack of functions](https://github.com/alexellis/journey-expert/tree/master/tweetstash) | Alex Ellis | github.com | 24-Apr-2017 |
 | [Github - URL Shortener](https://github.com/developius/faas-node-url-shortener) | Finnian Anderson | [developius/faas-node-url-shortener](https://github.com/developius/faas-node-url-shortener) | 19-Apr-2017 |
 | [Github - fibonacci numbers up to N](https://github.com/developius/faas-python-fib/) | Finnian Anderson | [developius/faas-python-fib/](https://github.com/developius/faas-python-fib/) | 19-Apr-2017 |
