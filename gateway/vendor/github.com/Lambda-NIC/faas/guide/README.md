@@ -7,17 +7,17 @@ Please see the [OpenFaaS docs site](https://docs.openfaas.com/).
 
 ## For archival purposes
 
-This page is a collection of our key blog posts, tutorials and guides while we prepare a [dedicated site](https://github.com/openfaas/faas/issues/253) for documentation. For other queries please get in touch for a Slack invite or ping [@openfaas](https://twitter.com/openfaas) on Twitter.
+This page is a collection of our key blog posts, tutorials and guides while we prepare a [dedicated site](https://github.com/Lambda-NIC/faas/issues/253) for documentation. For other queries please get in touch for a Slack invite or ping [@openfaas](https://twitter.com/openfaas) on Twitter.
 
-Suggestions for new topics are welcome. Please also check the [Issue tracker](https://github.com/openfaas/faas/issues).
+Suggestions for new topics are welcome. Please also check the [Issue tracker](https://github.com/Lambda-NIC/faas/issues).
 
 ## Deployment guides (start here)
 
 ### A foreword on security
 
-These instructions are for a development environment. If you plan to expose OpenFaaS on the public Internet you need to enable basic authentication with a proxy such as Kong or Traefik at a minimum. TLS is also highly recomended and freely available with LetsEncrypt.org. [Kong guide](https://github.com/openfaas/faas/blob/master/guide/kong_integration.md) [Traefik guide](https://github.com/openfaas/faas/blob/master/guide/traefik_integration.md).
+These instructions are for a development environment. If you plan to expose OpenFaaS on the public Internet you need to enable basic authentication with a proxy such as Kong or Traefik at a minimum. TLS is also highly recomended and freely available with LetsEncrypt.org. [Kong guide](https://github.com/Lambda-NIC/faas/blob/master/guide/kong_integration.md) [Traefik guide](https://github.com/Lambda-NIC/faas/blob/master/guide/traefik_integration.md).
 
-> Note: We are also looking to [automate authentication "out the box"](https://github.com/openfaas/faas/issues/349) to cover edge cases.
+> Note: We are also looking to [automate authentication "out the box"](https://github.com/Lambda-NIC/faas/issues/349) to cover edge cases.
 
 * [Kubernetes deployment](deployment_k8s.md)
 
@@ -37,7 +37,7 @@ These instructions are for a development environment. If you plan to expose Open
 
 * [Submit a function to the OpenFaaS Function Store](https://github.com/openfaas/store)
 
-* [Secrets with OpenFaaS and Docker Swarm](https://github.com/openfaas/faas/blob/master/guide/secure_secret_management.md)
+* [Secrets with OpenFaaS and Docker Swarm](https://github.com/Lambda-NIC/faas/blob/master/guide/secure_secret_management.md)
 
 * [Hardening OpenFaaS with Kong & TLS](kong_integration.md)
 
@@ -45,7 +45,7 @@ These instructions are for a development environment. If you plan to expose Open
 
 * [An Introduction to Serverless DevOps with OpenFaaS](https://hackernoon.com/an-introduction-to-serverless-devops-with-openfaas-b978ab0eb2b)
 
-* WIP [Debugging Functions](https://github.com/openfaas/faas/issues/223)
+* WIP [Debugging Functions](https://github.com/Lambda-NIC/faas/issues/223)
 
 ## Blog posts and tutorials
 
