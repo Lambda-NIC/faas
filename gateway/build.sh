@@ -4,7 +4,7 @@ set -e
 export dockerfile="Dockerfile"
 export arch=$(uname -m)
 
-export eTAG="latest-dev"
+export eTAG="latest"
 
 if [ "$arch" = "armv7l" ] ; then
    dockerfile="Dockerfile.armhf"
@@ -19,7 +19,7 @@ if [ "$1" ] ; then
   fi
 fi
 
-NS=openfaas
+NS=yo2seol
 
 echo Building $NS/gateway:$eTAG
 

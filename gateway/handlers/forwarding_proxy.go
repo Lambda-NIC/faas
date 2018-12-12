@@ -52,6 +52,7 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers [
 		baseURL := baseURLResolver.Resolve(r)
 		originalURL := r.URL.String()
 
+		// TODO: LambdaNIC change here!
 		requestURL := urlPathTransformer.Transform(r)
 
 		start := time.Now()
