@@ -3,7 +3,7 @@ services:
     gateway:
         ports:
             - 8080:8080
-        image: openfaas/gateway:0.9.11
+        image: openfaas/gateway:0.9.10
         networks:
             - functions
         environment:
@@ -18,7 +18,7 @@ services:
             direct_functions_suffix: ""
             basic_auth: "${BASIC_AUTH:-true}"
             secret_mount_path: "/run/secrets/"
-            scale_from_zero: "true"
+            scale_from_zero: "false"
         deploy:
             resources:
                 # limits:   # Enable if you want to limit memory usage
@@ -41,7 +41,7 @@ services:
     faas-swarm:
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
-        image:  openfaas/faas-swarm:0.5.0
+        image:  openfaas/faas-swarm:0.4.4
         networks:
             - functions
         environment:

@@ -1,4 +1,4 @@
-ignored = ["github.com/openfaas/faas/gateway/queue"]
+ignored = ["github.com/Lambda-NIC/faas/gateway/queue"]
 
 [[constraint]]
   name = "github.com/gorilla/mux"

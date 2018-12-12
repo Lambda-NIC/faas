@@ -2,21 +2,20 @@
 
 
 [[projects]]
-  branch = "master"
-  digest = "1:34ff4e1110b3d46a03541cc33167fca117aaad07c889610d2742fe34504564da"
+  digest = "1:c7994362c0372464c7da35dca2ccbb0e7ed2f50b8a968fe9203883186710e6f1"
   name = "github.com/Lambda-NIC/faas"
   packages = [
     "gateway/handlers",
     "gateway/metrics",
     "gateway/plugin",
-    "gateway/queue",
     "gateway/requests",
     "gateway/scaling",
     "gateway/types",
     "gateway/version",
   ]
   pruneopts = ""
-  revision = "87a14853e0e4e712d3fce4346ce044e424d8a920"
+  revision = "78a4584019a2a5d86b606a00b4fba979930cc2a7"
+  version = "0.9.11"
 
 [[projects]]
   branch = "master"
@@ -36,11 +35,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:0c5485088ce274fac2e931c1b979f2619345097b39d91af3239977114adf0320"
+  digest = "1:c0bec5f9b98d0bc872ff5e834fac186b807b656683bd29cb82fb207a1513fabb"
   name = "github.com/beorn7/perks"
   packages = ["quantile"]
   pruneopts = ""
-  revision = "4c0e84591b9aa9e6dcfdf3e020114cd81f89d5f9"
+  revision = "3a771d992973f24aa725d07868b467d1ddfceafb"
 
 [[projects]]
   digest = "1:4600ac901b8fa13c722175d3eeedd961c62a8453de16e13952f447aaefc8b544"
@@ -48,11 +47,10 @@
   packages = ["uuid"]
   pruneopts = ""
   revision = "40b7b5830a2337bb07627617740c0e39eb92800c"
-  source = "https://github.com/docker/distribution.git"
   version = "v2.7.0"
 
 [[projects]]
-  digest = "1:70a80170917a15e1ff02faab5f9e716e945e0676e86599ba144d38f96e30c3bf"
+  digest = "1:527e1e468c5586ef2645d143e9f5fbd50b4fe5abc8b1e25d9f1c416d22d24895"
   name = "github.com/gogo/protobuf"
   packages = [
     "gogoproto",
@@ -60,43 +58,43 @@
     "protoc-gen-gogo/descriptor",
   ]
   pruneopts = ""
-  revision = "342cbe0a04158f6dcb03ca0079991a51a4248c02"
-  version = "v0.5"
+  revision = "4cbf7e384e768b4e01799441fdf2a706a5635ae7"
+  version = "v1.2.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:3b760d3b93f994df8eb1d9ebfad17d3e9e37edcb7f7efaa15b427c0d7a64f4e4"
+  digest = "1:3dd078fda7500c341bc26cfbc6c6a34614f295a2457149fc1045cab767cbcf18"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
   pruneopts = ""
-  revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
+  revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
+  version = "v1.2.0"
 
 [[projects]]
-  digest = "1:20ed7daa9b3b38b6d1d39b48ab3fd31122be5419461470d0c28de3e121c93ecf"
+  digest = "1:dbbeb8ddb0be949954c8157ee8439c2adfd8dc1c9510eb44a6e58cb68c3dce28"
   name = "github.com/gorilla/context"
   packages = ["."]
   pruneopts = ""
-  revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
-  version = "v1.1"
+  revision = "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+  version = "v1.1.1"
 
 [[projects]]
-  digest = "1:a759b98c93c6dab29652eacd70cd7d0e88f02de8bc63051f787329966ec0a0ee"
+  digest = "1:c2c8666b4836c81a1d247bdf21c6a6fc1ab586538ab56f74437c2e0df5c375e1"
   name = "github.com/gorilla/mux"
   packages = ["."]
   pruneopts = ""
-  revision = "7f08801859139f86dfafd1c296e2cba9a80d292e"
-  version = "v1.6.0"
+  revision = "e3702bed27f0d39777b0b37b664b6280e8ef8fbf"
+  version = "v1.6.2"
 
 [[projects]]
-  digest = "1:4c23ced97a470b17d9ffd788310502a077b9c1f60221a85563e49696276b4147"
+  digest = "1:63722a4b1e1717be7b98fc686e0b30d5e7f734b9e93d7dee86293b6deab7ea28"
   name = "github.com/matttproud/golang_protobuf_extensions"
   packages = ["pbutil"]
   pruneopts = ""
-  revision = "3247c84500bff8d9fb6d579d800f20b3e091582c"
-  version = "v1.0.0"
+  revision = "c12348ce28de40eed0136aa2b644d0ee0650e56c"
+  version = "v1.0.1"
 
 [[projects]]
-  digest = "1:665af347df4c5d1ae4c3eacd0754f5337a301f6a3f2444c9993b996605c8c02b"
+  digest = "1:5aa6d4cc61e7a5902b3975845f1f5e64429df92d33e8ef989f6ca7b0aa5d2ac2"
   name = "github.com/nats-io/go-nats"
   packages = [
     ".",
@@ -104,8 +102,8 @@
     "util",
   ]
   pruneopts = ""
-  revision = "062418ea1c2181f52dc0f954f6204370519a868b"
-  version = "v1.5.0"
+  revision = "13c7fc7590db68b18f2015600f8765a02d705b5d"
+  version = "v1.7.0"
 
 [[projects]]
   digest = "1:ca0ffe35a7afa99d614845251f508505188d4117b87d368ee2f4b84c85f3fd29"
@@ -117,6 +115,14 @@
   pruneopts = ""
   revision = "e15a53f85e4932540600a16b56f6c4f65f58176f"
   version = "v0.4.0"
+
+[[projects]]
+  digest = "1:0006112541eed60bdfa279c8965c038865f05a677d980305dae7a0eec5bd133c"
+  name = "github.com/nats-io/nkeys"
+  packages = ["."]
+  pruneopts = ""
+  revision = "1546a3320a8f195a5b5c84aef8309377c2e411d5"
+  version = "v0.0.2"
 
 [[projects]]
   digest = "1:be61e8224b84064109eaba8157cbb4bbe6ca12443e182b6624fdfa1c0dcf53d9"
@@ -159,15 +165,15 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:60aca47f4eeeb972f1b9da7e7db51dee15ff6c59f7b401c1588b8e6771ba15ef"
+  digest = "1:185cf55b1f44a1bf243558901c3f06efa5c64ba62cfdcbb1bf7bbe8c3fb68561"
   name = "github.com/prometheus/client_model"
   packages = ["go"]
   pruneopts = ""
-  revision = "99fa1f4be8e564e8a6b613da7fa6f46c9edafc6c"
+  revision = "5c3871d89910bfb32f5fcab2aa4b9ec68e65a99f"
 
 [[projects]]
   branch = "master"
-  digest = "1:e3aa5178be4fc4ae8cdb37d11c02f7490c00450a9f419e6aa84d02d3b47e90d2"
+  digest = "1:3015ace839b82abfb015b6fc2aebf32f4a6a8c522defacd916552387948c22a8"
   name = "github.com/prometheus/common"
   packages = [
     "expfmt",
@@ -175,18 +181,31 @@
     "model",
   ]
   pruneopts = ""
-  revision = "2e54d0b93cba2fd133edc32211dcc32c06ef72ca"
+  revision = "4724e9255275ce38f7179b2478abeae4e28c904f"
 
 [[projects]]
   branch = "master"
-  digest = "1:f0857d075687b4ddebb10c8403d5fec9f093f7208b34ed5b6f3101ee2e77cec5"
+  digest = "1:2a434946be9f2f5498b2405a8607768aab439237ea13deff2edc59d9a44f8891"
   name = "github.com/prometheus/procfs"
   packages = [
     ".",
+    "internal/util",
+    "nfs",
     "xfs",
   ]
   pruneopts = ""
-  revision = "b15cd069a83443be3154b719d0cc9fe8117f09fb"
+  revision = "1dc9a6cbc91aacc3e8b2d63db4d2e957a5394ac4"
+
+[[projects]]
+  branch = "master"
+  digest = "1:887074c37fcefc2f49b5ae9c6f9f36107341aec23185613d0e9f1ee81db7f94a"
+  name = "golang.org/x/crypto"
+  packages = [
+    "ed25519",
+    "ed25519/internal/edwards25519",
+  ]
+  pruneopts = ""
+  revision = "505ab145d0a99da450461ae2c1a9f6cd10d1f447"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -196,7 +215,6 @@
     "github.com/Lambda-NIC/faas/gateway/handlers",
     "github.com/Lambda-NIC/faas/gateway/metrics",
     "github.com/Lambda-NIC/faas/gateway/plugin",
-    "github.com/Lambda-NIC/faas/gateway/queue",
     "github.com/Lambda-NIC/faas/gateway/requests",
     "github.com/Lambda-NIC/faas/gateway/scaling",
     "github.com/Lambda-NIC/faas/gateway/types",
