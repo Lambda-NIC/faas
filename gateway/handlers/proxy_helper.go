@@ -35,7 +35,7 @@ func generateResponse(w http.ResponseWriter, r *http.Request, isHealth bool) (in
 	copyHeaders(w.Header(), &res.Header)
 
 	// Write status code
-	w.WriteHeader(res.StatusCode)
+	w.WriteHeader(http.StatusOK)
 
 	if res.Body != nil {
 		// Copy the body over
