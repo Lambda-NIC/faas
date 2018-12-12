@@ -64,9 +64,12 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers [
 
 		if strings.Contains(r.URL.Path, "lambdanic") {
 			log.Printf("Need a proxy for SmartNICs for URL: %s\n", requestURL)
-			statusCode, err = generateResponse(w, r)
-			log.Printf("Sending Response Size: %d with code: %d\n",
-				r.ContentLength, statusCode)
+			if strings.Contains(r.URL.Path, "system/function") {
+				statusCode, err = generateResponse(w, r, true)
+			} else {
+				statusCode, err = generateResponse(w, r, false)
+			}
+			log.Printf("Sending Response with code: %d\n", statusCode)
 		} else {
 			statusCode, err = forwardRequest(w, r, proxy.Client,
 				baseURL, requestURL, proxy.Timeout)

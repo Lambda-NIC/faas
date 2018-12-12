@@ -9,8 +9,13 @@ import (
 	"net/http"
 )
 
-func generateResponse(w http.ResponseWriter, r *http.Request) (int, error) {
-	body := "Hello world"
+func generateResponse(w http.ResponseWriter, r *http.Request, isHealth bool) (int, error) {
+	var body string
+	if isHealth {
+		body = "Hello world"
+	} else {
+		body = "OK"
+	}
 	res := &http.Response{
 		Status:        "200 OK",
 		StatusCode:    200,
