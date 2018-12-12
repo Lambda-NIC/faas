@@ -1,11 +1,4 @@
-[[constraint]]
-  name = "github.com/docker/distribution"
-  source = "https://github.com/docker/distribution.git"
-  version = "v2.7.0"
-
-[[constraint]]
-  name = "github.com/Lambda-NIC/faas"
-  branch = "master"
+ignored = ["github.com/openfaas/faas/gateway/queue"]
 
 [[constraint]]
   name = "github.com/gorilla/mux"
