@@ -1,6 +1,6 @@
 FROM golang:1.10.4 as build
 
-WORKDIR /go/src/github.com/openfaas/faas/gateway
+WORKDIR /go/src/github.com/Lambda-NIC/faas/gateway
 
 COPY vendor         vendor
 
@@ -25,7 +25,7 @@ EXPOSE 8080
 ENV http_proxy      ""
 ENV https_proxy     ""
 
-COPY --from=0 /go/src/github.com/openfaas/faas/gateway/gateway    .
+COPY --from=0 /go/src/github.com/Lambda-NIC/faas/gateway/gateway    .
 
 COPY assets     assets
 RUN sed -ie s/store.json/store-armhf.json/g /root/assets/script/funcstore.js

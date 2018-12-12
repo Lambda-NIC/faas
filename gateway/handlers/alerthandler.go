@@ -10,8 +10,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/openfaas/faas/gateway/requests"
-	"github.com/openfaas/faas/gateway/scaling"
+	"github.com/Lambda-NIC/faas/gateway/requests"
+	"github.com/Lambda-NIC/faas/gateway/scaling"
 )
 
 // MakeAlertHandler handles alerts from Prometheus Alertmanager

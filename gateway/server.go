@@ -9,15 +9,15 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/Lambda-NIC/faas/gateway/handlers"
+	"github.com/Lambda-NIC/faas/gateway/scaling"
 	"github.com/gorilla/mux"
-	"github.com/openfaas/faas/gateway/handlers"
-	"github.com/openfaas/faas/gateway/scaling"
 
-	"github.com/openfaas/faas-provider/auth"
-	"github.com/openfaas/faas/gateway/metrics"
-	"github.com/openfaas/faas/gateway/plugin"
-	"github.com/openfaas/faas/gateway/types"
-	natsHandler "github.com/openfaas/nats-queue-worker/handler"
+	"github.com/Lambda-NIC/faas-provider/auth"
+	"github.com/Lambda-NIC/faas/gateway/metrics"
+	"github.com/Lambda-NIC/faas/gateway/plugin"
+	"github.com/Lambda-NIC/faas/gateway/types"
+	natsHandler "github.com/Lambda-NIC/nats-queue-worker/handler"
 )
 
 func main() {

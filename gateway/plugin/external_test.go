@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/openfaas/faas-provider/auth"
-	"github.com/openfaas/faas/gateway/scaling"
+	"github.com/Lambda-NIC/faas-provider/auth"
+	"github.com/Lambda-NIC/faas/gateway/scaling"
 )
 
 const fallbackValue = 120

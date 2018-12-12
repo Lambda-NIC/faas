@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/openfaas/faas/gateway/requests"
+	"github.com/Lambda-NIC/faas/gateway/requests"
 )
 
 func createFunction(request requests.CreateFunctionRequest) (string, int, error) {

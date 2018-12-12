@@ -3,7 +3,7 @@ set -e
 
 export arch=$(uname -m)
 
-export eTAG="latest-dev"
+export eTAG="latest"
 
 if [ "$arch" = "armv7l" ] ; then
    eTAG="latest-armhf-dev"
@@ -17,7 +17,9 @@ if [ "$1" ] ; then
   fi
 fi
 
-echo Pushing openfaas/gateway:$eTAG
+NS=lambdanic
+REPO=faas-gateway
 
-docker push openfaas/gateway:$eTAG
+echo Pushing $NS/$REPO:$eTAG
 
+docker push $NS/$REPO:$eTAG

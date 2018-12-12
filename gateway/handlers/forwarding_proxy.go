@@ -15,8 +15,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/openfaas/faas/gateway/metrics"
-	"github.com/openfaas/faas/gateway/types"
+	"github.com/Lambda-NIC/faas/gateway/metrics"
+	"github.com/Lambda-NIC/faas/gateway/types"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
@@ -57,11 +57,20 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers [
 
 		start := time.Now()
 
-		statusCode, err := forwardRequest(w, r, proxy.Client, baseURL, requestURL, proxy.Timeout)
+		var statusCode int
+		var err error
 
+		if strings.Contains(functionName, "lambdanic") {
+			log.Println("Need a proxy for SmartNICs")
+			statusCode, err = generateResponse(w, r)
+		} else {
+			statusCode, err = forwardRequest(w, r, proxy.Client,
+				baseURL, requestURL, proxy.Timeout)
+		}
 		seconds := time.Since(start)
 		if err != nil {
-			log.Printf("error with upstream request to: %s, %s\n", requestURL, err.Error())
+			log.Printf("error with upstream request to: %s, %s\n",
+				requestURL, err.Error())
 		}
 
 		for _, notifier := range notifiers {
@@ -70,7 +79,8 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers [
 	}
 }
 
-func buildUpstreamRequest(r *http.Request, baseURL string, requestURL string) *http.Request {
+func buildUpstreamRequest(
+	r *http.Request, baseURL string, requestURL string) *http.Request {
 	url := baseURL + requestURL
 
 	if len(r.URL.RawQuery) > 0 {

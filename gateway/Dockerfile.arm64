@@ -1,5 +1,5 @@
 FROM golang:1.10.4 as build
-WORKDIR /go/src/github.com/openfaas/faas/gateway
+WORKDIR /go/src/github.com/Lambda-NIC/faas/gateway
 
 #RUN curl -sL https://github.com/alexellis/license-check/releases/download/0.1/license-check > /usr/bin/license-check && chmod +x /usr/bin/license-check
 
@@ -34,7 +34,7 @@ ENV https_proxy     ""
 
 
 
-COPY --from=build /go/src/github.com/openfaas/faas/gateway/gateway    .
+COPY --from=build /go/src/github.com/Lambda-NIC/faas/gateway/gateway    .
 COPY assets     assets
 
 RUN chown -R app:app ./

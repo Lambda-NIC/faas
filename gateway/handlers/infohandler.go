@@ -11,8 +11,8 @@ import (
 	"io/ioutil"
 	"net/http/httptest"
 
-	"github.com/openfaas/faas/gateway/types"
-	"github.com/openfaas/faas/gateway/version"
+	"github.com/Lambda-NIC/faas/gateway/types"
+	"github.com/Lambda-NIC/faas/gateway/version"
 )
 
 // MakeInfoHandler is responsible for display component version information

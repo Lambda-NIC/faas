@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/openfaas/faas/gateway/metrics"
-	"github.com/openfaas/faas/gateway/requests"
+	"github.com/Lambda-NIC/faas/gateway/metrics"
+	"github.com/Lambda-NIC/faas/gateway/requests"
 )
 
 // MakeAsyncReport makes a handler for asynchronous invocations to report back into.

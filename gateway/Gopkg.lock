@@ -3,124 +3,209 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:34ff4e1110b3d46a03541cc33167fca117aaad07c889610d2742fe34504564da"
+  name = "github.com/Lambda-NIC/faas"
+  packages = [
+    "gateway/handlers",
+    "gateway/metrics",
+    "gateway/plugin",
+    "gateway/queue",
+    "gateway/requests",
+    "gateway/scaling",
+    "gateway/types",
+    "gateway/version",
+  ]
+  pruneopts = ""
+  revision = "87a14853e0e4e712d3fce4346ce044e424d8a920"
+
+[[projects]]
+  branch = "master"
+  digest = "1:eced2f7e45053c0279efbe8414d1a3fe0f485865ba8618920463ba148a3b27df"
+  name = "github.com/Lambda-NIC/faas-provider"
+  packages = ["auth"]
+  pruneopts = ""
+  revision = "5e6b95e4e4100c5ae28c89cde3acfd9556cc1ba6"
+
+[[projects]]
+  branch = "master"
+  digest = "1:3234e89543a0701a5389d3bedabba816cd89ad6a28ab6134a9344ac6bc1296b1"
+  name = "github.com/Lambda-NIC/nats-queue-worker"
+  packages = ["handler"]
+  pruneopts = ""
+  revision = "3aa089923ce45e598242f1ee6b8ac43e97720005"
+
+[[projects]]
+  branch = "master"
+  digest = "1:0c5485088ce274fac2e931c1b979f2619345097b39d91af3239977114adf0320"
   name = "github.com/beorn7/perks"
   packages = ["quantile"]
+  pruneopts = ""
   revision = "4c0e84591b9aa9e6dcfdf3e020114cd81f89d5f9"
 
 [[projects]]
+  digest = "1:4600ac901b8fa13c722175d3eeedd961c62a8453de16e13952f447aaefc8b544"
   name = "github.com/docker/distribution"
   packages = ["uuid"]
-  revision = "48294d928ced5dd9b378f7fd7c6f5da3ff3f2c89"
-  version = "v2.6.2"
+  pruneopts = ""
+  revision = "40b7b5830a2337bb07627617740c0e39eb92800c"
+  source = "https://github.com/docker/distribution.git"
+  version = "v2.7.0"
 
 [[projects]]
+  digest = "1:70a80170917a15e1ff02faab5f9e716e945e0676e86599ba144d38f96e30c3bf"
   name = "github.com/gogo/protobuf"
   packages = [
     "gogoproto",
     "proto",
-    "protoc-gen-gogo/descriptor"
+    "protoc-gen-gogo/descriptor",
   ]
+  pruneopts = ""
   revision = "342cbe0a04158f6dcb03ca0079991a51a4248c02"
   version = "v0.5"
 
 [[projects]]
   branch = "master"
+  digest = "1:3b760d3b93f994df8eb1d9ebfad17d3e9e37edcb7f7efaa15b427c0d7a64f4e4"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
+  pruneopts = ""
   revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
 
 [[projects]]
+  digest = "1:20ed7daa9b3b38b6d1d39b48ab3fd31122be5419461470d0c28de3e121c93ecf"
   name = "github.com/gorilla/context"
   packages = ["."]
+  pruneopts = ""
   revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
   version = "v1.1"
 
 [[projects]]
+  digest = "1:a759b98c93c6dab29652eacd70cd7d0e88f02de8bc63051f787329966ec0a0ee"
   name = "github.com/gorilla/mux"
   packages = ["."]
+  pruneopts = ""
   revision = "7f08801859139f86dfafd1c296e2cba9a80d292e"
   version = "v1.6.0"
 
 [[projects]]
+  digest = "1:4c23ced97a470b17d9ffd788310502a077b9c1f60221a85563e49696276b4147"
   name = "github.com/matttproud/golang_protobuf_extensions"
   packages = ["pbutil"]
+  pruneopts = ""
   revision = "3247c84500bff8d9fb6d579d800f20b3e091582c"
   version = "v1.0.0"
 
 [[projects]]
+  digest = "1:665af347df4c5d1ae4c3eacd0754f5337a301f6a3f2444c9993b996605c8c02b"
   name = "github.com/nats-io/go-nats"
   packages = [
     ".",
     "encoders/builtin",
-    "util"
+    "util",
   ]
+  pruneopts = ""
   revision = "062418ea1c2181f52dc0f954f6204370519a868b"
   version = "v1.5.0"
 
 [[projects]]
+  digest = "1:ca0ffe35a7afa99d614845251f508505188d4117b87d368ee2f4b84c85f3fd29"
   name = "github.com/nats-io/go-nats-streaming"
   packages = [
     ".",
-    "pb"
+    "pb",
   ]
+  pruneopts = ""
   revision = "e15a53f85e4932540600a16b56f6c4f65f58176f"
   version = "v0.4.0"
 
 [[projects]]
+  digest = "1:be61e8224b84064109eaba8157cbb4bbe6ca12443e182b6624fdfa1c0dcf53d9"
   name = "github.com/nats-io/nuid"
   packages = ["."]
+  pruneopts = ""
   revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
   version = "v1.0.0"
 
 [[projects]]
-  name = "github.com/openfaas/faas-provider"
+  digest = "1:c7994362c0372464c7da35dca2ccbb0e7ed2f50b8a968fe9203883186710e6f1"
+  name = "github.com/openfaas/faas"
   packages = [
-    ".",
-    "types"
+    "gateway/metrics",
+    "gateway/queue",
+    "gateway/requests",
+    "gateway/scaling",
+    "gateway/types",
+    "gateway/version",
   ]
-  revision = "9ce928bc82cbb2642e6d534f93a7904116179e6c"
-  version = "0.7.0"
+  pruneopts = ""
+  revision = "78a4584019a2a5d86b606a00b4fba979930cc2a7"
+  version = "0.9.11"
 
 [[projects]]
-  name = "github.com/openfaas/nats-queue-worker"
-  packages = ["handler"]
-  revision = "15287c9b2af293cee0c545ccc014a68e1f0a4424"
-  version = "0.4.7"
+  digest = "1:c437519be7955b76d5020f186b1550d85e1c88ae46afdca97c213504cb76f150"
+  name = "github.com/openfaas/faas-provider"
+  packages = ["auth"]
+  pruneopts = ""
+  revision = "8b3147b013c651d5f017b31fa1225ae21e1dc93d"
+  version = "0.8.0"
 
 [[projects]]
+  digest = "1:4142d94383572e74b42352273652c62afec5b23f325222ed09198f46009022d1"
   name = "github.com/prometheus/client_golang"
   packages = ["prometheus"]
+  pruneopts = ""
   revision = "c5b7fccd204277076155f10851dad72b76a49317"
   version = "v0.8.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:60aca47f4eeeb972f1b9da7e7db51dee15ff6c59f7b401c1588b8e6771ba15ef"
   name = "github.com/prometheus/client_model"
   packages = ["go"]
+  pruneopts = ""
   revision = "99fa1f4be8e564e8a6b613da7fa6f46c9edafc6c"
 
 [[projects]]
   branch = "master"
+  digest = "1:e3aa5178be4fc4ae8cdb37d11c02f7490c00450a9f419e6aa84d02d3b47e90d2"
   name = "github.com/prometheus/common"
   packages = [
     "expfmt",
     "internal/bitbucket.org/ww/goautoneg",
-    "model"
+    "model",
   ]
+  pruneopts = ""
   revision = "2e54d0b93cba2fd133edc32211dcc32c06ef72ca"
 
 [[projects]]
   branch = "master"
+  digest = "1:f0857d075687b4ddebb10c8403d5fec9f093f7208b34ed5b6f3101ee2e77cec5"
   name = "github.com/prometheus/procfs"
   packages = [
     ".",
-    "xfs"
+    "xfs",
   ]
+  pruneopts = ""
   revision = "b15cd069a83443be3154b719d0cc9fe8117f09fb"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "28590014be90eceddef008d7ef4843165d708e8358c428ad907c50e363af424f"
+  input-imports = [
+    "github.com/Lambda-NIC/faas-provider/auth",
+    "github.com/Lambda-NIC/faas/gateway/handlers",
+    "github.com/Lambda-NIC/faas/gateway/metrics",
+    "github.com/Lambda-NIC/faas/gateway/plugin",
+    "github.com/Lambda-NIC/faas/gateway/queue",
+    "github.com/Lambda-NIC/faas/gateway/requests",
+    "github.com/Lambda-NIC/faas/gateway/scaling",
+    "github.com/Lambda-NIC/faas/gateway/types",
+    "github.com/Lambda-NIC/faas/gateway/version",
+    "github.com/Lambda-NIC/nats-queue-worker/handler",
+    "github.com/docker/distribution/uuid",
+    "github.com/gorilla/mux",
+    "github.com/prometheus/client_golang/prometheus",
+    "github.com/prometheus/client_model/go",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

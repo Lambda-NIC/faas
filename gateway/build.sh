@@ -19,9 +19,10 @@ if [ "$1" ] ; then
   fi
 fi
 
-NS=yo2seol
+NS=lambdanic
+REPO=faas-gateway
 
-echo Building $NS/gateway:$eTAG
+echo Building $NS/$REPO:$eTAG
 
 GIT_COMMIT_MESSAGE=$(git log -1 --pretty=%B 2>&1 | head -n 1)
 GIT_COMMIT_SHA=$(git rev-list -1 HEAD)
@@ -30,4 +31,4 @@ VERSION=$(git describe --all --exact-match `git rev-parse HEAD` | grep tags | se
 docker build --build-arg https_proxy=$https_proxy --build-arg http_proxy=$http_proxy \
   --build-arg GIT_COMMIT_MESSAGE="$GIT_COMMIT_MESSAGE" --build-arg GIT_COMMIT_SHA=$GIT_COMMIT_SHA \
   --build-arg VERSION=${VERSION:-dev} \
-  -t $NS/gateway:$eTAG . -f $dockerfile --no-cache
+  -t $NS/$REPO:$eTAG . -f $dockerfile --no-cache

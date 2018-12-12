@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/openfaas/faas/gateway/types"
+	"github.com/Lambda-NIC/faas/gateway/types"
 )
 
 func Test_InfoEndpoint_Returns_200(t *testing.T) {
