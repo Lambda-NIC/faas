@@ -3,10 +3,6 @@ ARG GIT_COMMIT_SHA
 ARG GIT_COMMIT_MESSAGE
 ARG VERSION='dev'
 
-RUN curl -sSfL https://github.com/alexellis/license-check/releases/download/0.2.2/license-check \
-    > /usr/bin/license-check \
-    && chmod +x /usr/bin/license-check
-
 WORKDIR /go/src/github.com/Lambda-NIC/faas/gateway
 
 COPY vendor         vendor
@@ -24,9 +20,7 @@ COPY scaling        scaling
 COPY server.go      .
 
 # Run a gofmt and exclude all vendored code.
-RUN license-check -path ./ --verbose=false "Alex Ellis" "OpenFaaS Project" "OpenFaaS Authors" "OpenFaaS Author(s)" \
-    && test -z "$(gofmt -l $(find . -type f -name '*.go' -not -path "./vendor/*"))" \
-    && go test $(go list ./... | grep -v integration | grep -v /vendor/ | grep -v /template/) -cover \
+RUN go test $(go list ./... | grep -v integration | grep -v /vendor/ | grep -v /template/) -cover \
     && CGO_ENABLED=0 GOOS=linux go build --ldflags "-s -w \
     -X github.com/Lambda-NIC/faas/gateway/version.GitCommitSHA=${GIT_COMMIT_SHA}\
     -X \"github.com/Lambda-NIC/faas/gateway/version.GitCommitMessage=${GIT_COMMIT_MESSAGE}\"\
