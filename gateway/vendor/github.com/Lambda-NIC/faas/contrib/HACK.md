@@ -2,7 +2,7 @@
 
 The OpenFaaS UI consists of static pages built in Angular 1.x. These call the OpenFaaS API gateway for operations such as listing / creating and deleting functions.
 
-The [Function Store](https://github.com/openfaas/store) is stored on GitHub as a JSON file which is fecthed by the browser over HTTPS. A CORS exception is maintained for GitHub's RAW CDN for this purpose within the [gateway code](https://github.com/Lambda-NIC/faas/blob/master/gateway/server.go).
+The [Function Store](https://github.com/openfaas/store) is stored on GitHub as a JSON file which is fecthed by the browser over HTTPS. A CORS exception is maintained for GitHub's RAW CDN for this purpose within the [gateway code](https://github.com/openfaas/faas/blob/master/gateway/server.go).
 
 ## Multi-browser testing
 

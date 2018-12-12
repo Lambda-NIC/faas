@@ -36,5 +36,5 @@
 
 * Link to your project or a code example to reproduce issue:
 
-* Please also follow the [troubleshooting guide](https://github.com/Lambda-NIC/faas/blob/master/guide/troubleshooting.md) and paste in any other diagnostic information you have:
+* Please also follow the [troubleshooting guide](https://github.com/openfaas/faas/blob/master/guide/troubleshooting.md) and paste in any other diagnostic information you have:
 

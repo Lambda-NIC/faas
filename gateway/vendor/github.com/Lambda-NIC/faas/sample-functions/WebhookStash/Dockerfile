@@ -4,10 +4,10 @@ MAINTAINER alex@openfaas.com
 ENTRYPOINT []
 
 RUN apk --no-cache add make curl \
-    && curl -sL https://github.com/Lambda-NIC/faas/releases/download/0.9.6/fwatchdog > /usr/bin/fwatchdog \
+    && curl -sL https://github.com/openfaas/faas/releases/download/0.9.6/fwatchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog
 
-WORKDIR /go/src/github.com/Lambda-NIC/faas/sample-functions/WebhookStash
+WORKDIR /go/src/github.com/openfaas/faas/sample-functions/WebhookStash
 
 COPY handler.go .
 # COPY vendor vendor

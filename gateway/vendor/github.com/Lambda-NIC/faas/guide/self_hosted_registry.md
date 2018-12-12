@@ -10,7 +10,7 @@ This describes how to use OpenFaaS in a swarm with your own local registry for h
 
 For this example lets presume you want to create a swarm of 3 nodes. Use node1 as the manager.
 
-This is adapted from the [Swarm deployment guide](https://github.com/Lambda-NIC/faas/blob/master/guide/deployment_swarm.md).
+This is adapted from the [Swarm deployment guide](https://github.com/openfaas/faas/blob/master/guide/deployment_swarm.md).
 
 ```
 $ docker swarm init --advertise-addr $(hostname -i)
@@ -23,7 +23,7 @@ $ docker swarm join --token ...
 
 ## Install OpenFaaS
 ```
-$ git clone https://github.com/Lambda-NIC/faas && \
+$ git clone https://github.com/openfaas/faas && \
   cd faas && \
   ./deploy_stack.sh
 ```
@@ -38,7 +38,7 @@ docker service create -d -p 5000:5000 \
   --name registry registry:2
 ```
 
-Here we are using a basic local registry. You can deploy it elsewhere and use volumes depending on your persistence needs. If you would like to [use authentication with your registry, this guide may be helpful](https://github.com/Lambda-NIC/faas/blob/master/docs/managing-images.md#deploy-your-own-private-docker-registry).
+Here we are using a basic local registry. You can deploy it elsewhere and use volumes depending on your persistence needs. If you would like to [use authentication with your registry, this guide may be helpful](https://github.com/openfaas/faas/blob/master/docs/managing-images.md#deploy-your-own-private-docker-registry).
 
 
 ## Install the CLI

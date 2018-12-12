@@ -21,7 +21,7 @@ The easiest way to create a function is to use a template and the FaaS CLI. The 
 
 * [Your first serverless Python function with OpenFaaS](https://blog.alexellis.io/first-faas-python-function/)
 
-* [Read a tutorial on the FaaS CLI](https://github.com/Lambda-NIC/faas-cli)
+* [Read a tutorial on the FaaS CLI](https://github.com/openfaas/faas-cli)
 
 ## Delve deeper
 
@@ -30,7 +30,7 @@ The easiest way to create a function is to use a template and the FaaS CLI. The 
 Here's how to package your function if you don't want to use the CLI or have existing binaries or images:
 
 - [x] Use an existing or a new Docker image as base image `FROM`
-- [x] Add the fwatchdog binary from the [Releases page](https://github.com/Lambda-NIC/faas/releases) via `curl` or `ADD https://`
+- [x] Add the fwatchdog binary from the [Releases page](https://github.com/openfaas/faas/releases) via `curl` or `ADD https://`
 - [x] Set an `fprocess` (function process) environmental variable with the function you want to run for each request
 - [x] Expose port 8080
 - [x] Set the `CMD` to `fwatchdog`
@@ -40,7 +40,7 @@ Example Dockerfile for an `echo` function:
 ```
 FROM alpine:3.8
 
-ADD https://github.com/Lambda-NIC/faas/releases/download/0.9.6/fwatchdog /usr/bin
+ADD https://github.com/openfaas/faas/releases/download/0.9.6/fwatchdog /usr/bin
 RUN chmod +x /usr/bin/fwatchdog
 
 # Define your binary here
@@ -54,7 +54,7 @@ You can optimize Docker to cache getting the watchdog by using curl, instead of 
 To do so, replace the related lines with:
 ```
 RUN apk --no-cache add curl \
-    && curl -sL https://github.com/Lambda-NIC/faas/releases/download/0.9.6/fwatchdog > /usr/bin/fwatchdog \
+    && curl -sL https://github.com/openfaas/faas/releases/download/0.9.6/fwatchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog
 ```
 

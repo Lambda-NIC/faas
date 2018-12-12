@@ -4,7 +4,7 @@ In this guide we will be using the `docker-machine` tool to provision a number o
 
 ### A foreword on security
 
-These instructions are for a development environment. If you plan to expose OpenFaaS on the public Internet you need to enable basic authentication with a proxy such as Kong or Traefik at a minimum. TLS is also highly recomended and freely available with LetsEncrypt.org. [Kong guide](https://github.com/Lambda-NIC/faas/blob/master/guide/kong_integration.md) [Traefik guide](https://github.com/Lambda-NIC/faas/blob/master/guide/traefik_integration.md).
+These instructions are for a development environment. If you plan to expose OpenFaaS on the public Internet you need to enable basic authentication with a proxy such as Kong or Traefik at a minimum. TLS is also highly recomended and freely available with LetsEncrypt.org. [Kong guide](https://github.com/openfaas/faas/blob/master/guide/kong_integration.md) [Traefik guide](https://github.com/openfaas/faas/blob/master/guide/traefik_integration.md).
 
 ## Create DigitalOcean API Access Token
 

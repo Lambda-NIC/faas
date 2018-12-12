@@ -10,9 +10,9 @@ For the latest updates see [blog.alexellis.io/tag/openfaas](https://blog.alexell
 
 ## Primary GitHub Organisation:
 
-* https://github.com/Lambda-NIC/faas
-* https://github.com/Lambda-NIC/faas-netes
-* https://github.com/Lambda-NIC/faas-cli
+* https://github.com/openfaas/faas
+* https://github.com/openfaas/faas-netes
+* https://github.com/openfaas/faas-cli
 * https://github.com/openfaas/nats-queue-worker
 
 ## Incubator GitHub Organisation:
@@ -83,7 +83,7 @@ This binary fwatchdog acts as a watchdog for your function. Features:
 
 ## 2. Future/current work (subject to change)
 
-If you need an up-to-date picture of what is current and ready-for-use please reach out to the OpenFaaS maintainers through our Slack comunity. Most items are detailed [via Github issues](https://github.com/Lambda-NIC/faas/issues).
+If you need an up-to-date picture of what is current and ready-for-use please reach out to the OpenFaaS maintainers through our Slack comunity. Most items are detailed [via Github issues](https://github.com/openfaas/faas/issues).
 
 Native support is available for Docker Swarm and Kubernetes using primitive API objects in each orchestration platform.
 
@@ -140,4 +140,4 @@ Internal research is also being done for the ACI / AKS / K8s-connector.
 
 ### Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/Lambda-NIC/faas/blob/master/CONTRIBUTING.md).
+Please see [CONTRIBUTING.md](https://github.com/openfaas/faas/blob/master/CONTRIBUTING.md).

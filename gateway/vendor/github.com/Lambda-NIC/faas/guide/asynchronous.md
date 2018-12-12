@@ -12,10 +12,10 @@ Summary of modes for calling functions via API Gateway:
 | -------------|--------|------------------------------------------------|------|--------- |------------------- |
 | Synchronous  | POST   | http://gateway:8080/function/{function_name}        | Yes  | Yes      | Yes |
 | Synchronous  | GET    | http://gateway:8080/function/{function_name}        | Yes  | Yes      | Yes |
-| Asynchronous | POST   | http://gateway:8080/async-function/{function_name}  | Yes  | Yes      | Yes [#369](https://github.com/Lambda-NIC/faas/issues/369) |
+| Asynchronous | POST   | http://gateway:8080/async-function/{function_name}  | Yes  | Yes      | Yes [#369](https://github.com/openfaas/faas/issues/369) |
 | Asynchronous | GET    | Not supported                                  | -    | -        | - |
 
-> Note: This work was originally carried out under [PR #131](https://github.com/Lambda-NIC/faas/pull/131).
+> Note: This work was originally carried out under [PR #131](https://github.com/openfaas/faas/pull/131).
 
 *Logical flow for synchronous functions:*
 
@@ -74,4 +74,4 @@ Hard timeout:
 
 To make use of these just add them to your Dockerfile when needed as ENV variables.
 
-> [Function watchdog reference](https://github.com/Lambda-NIC/faas/tree/master/watchdog)
+> [Function watchdog reference](https://github.com/openfaas/faas/tree/master/watchdog)

@@ -36,7 +36,7 @@ This one-shot script clones the code, sets up a Docker Swarm master node then de
 
 ```
 # docker swarm init --advertise-addr eth0 && \
-  git clone https://github.com/Lambda-NIC/faas && \
+  git clone https://github.com/openfaas/faas && \
   cd faas && \
   git checkout 0.8.0 && \
   ./deploy_stack.sh && \
@@ -89,7 +89,7 @@ $ faas-cli --help
 
 ### Invoke the sample functions with curl or Postman:
 
-Head over to the [Github and Star the project](https://github.com/Lambda-NIC/faas), or read on to see the input/output from the sample functions.
+Head over to the [Github and Star the project](https://github.com/openfaas/faas), or read on to see the input/output from the sample functions.
 
 ### Working with the sample functions
 
@@ -166,7 +166,7 @@ Guides:
 
 Read the developer guide:
 
-* [Packaging a function](https://github.com/Lambda-NIC/faas/blob/master/DEV.md)
+* [Packaging a function](https://github.com/openfaas/faas/blob/master/DEV.md)
 
 The original blog post also walks through creating a function:
 
@@ -176,7 +176,7 @@ The original blog post also walks through creating a function:
 
 **Option 1: via the FaaS CLI**
 
-The FaaS CLI can be used to build functions very quickly though the use of templates. See more details on the FaaS CLI [here](https://github.com/Lambda-NIC/faas-cli).
+The FaaS CLI can be used to build functions very quickly though the use of templates. See more details on the FaaS CLI [here](https://github.com/openfaas/faas-cli).
 
 **Option 2: via FaaS UI portal**
 

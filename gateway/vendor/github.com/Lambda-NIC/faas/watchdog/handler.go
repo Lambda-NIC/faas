@@ -17,7 +17,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Lambda-NIC/faas/watchdog/types"
+	"github.com/openfaas/faas/watchdog/types"
 )
 
 type requestInfo struct {

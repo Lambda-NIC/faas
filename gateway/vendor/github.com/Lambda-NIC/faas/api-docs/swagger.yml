@@ -160,7 +160,7 @@ paths:
     post:
       summary: 'Invoke a function asynchronously in OpenFaaS'
       description: >-
-        See https://github.com/Lambda-NIC/faas/blob/master/guide/asynchronous.md.
+        See https://github.com/openfaas/faas/blob/master/guide/asynchronous.md.
       parameters:
       - in: path
         name: functionName
@@ -454,4 +454,4 @@ definitions:
     - labels
 externalDocs:
   description: More documentation available on Github
-  url: 'https://github.com/Lambda-NIC/faas'
+  url: 'https://github.com/openfaas/faas'

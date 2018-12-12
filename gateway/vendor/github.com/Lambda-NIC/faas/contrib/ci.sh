@@ -67,7 +67,7 @@ if [ "$wait_success" != true ] ; then
 fi
 
 echo Running integration tests
-cd $GOPATH/src/github.com/Lambda-NIC/faas/gateway/tests/integration && \
+cd $GOPATH/src/github.com/openfaas/faas/gateway/tests/integration && \
    go test -v -count=1
 
 echo Running certifier
