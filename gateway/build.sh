@@ -28,6 +28,8 @@ GIT_COMMIT_MESSAGE=$(git log -1 --pretty=%B 2>&1 | head -n 1)
 GIT_COMMIT_SHA=$(git rev-list -1 HEAD)
 VERSION=$(git describe --all --exact-match `git rev-parse HEAD` | grep tags | sed 's/tags\///' || echo dev)
 
+dep ensure
+
 docker build --build-arg https_proxy=$https_proxy --build-arg http_proxy=$http_proxy \
   --build-arg GIT_COMMIT_MESSAGE="$GIT_COMMIT_MESSAGE" --build-arg GIT_COMMIT_SHA=$GIT_COMMIT_SHA \
   --build-arg VERSION=${VERSION:-dev} \
