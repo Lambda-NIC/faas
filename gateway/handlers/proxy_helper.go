@@ -11,6 +11,7 @@ import (
 	"net"
 	"net/http"
 	"sync"
+	"time"
 )
 
 const udpPacketSize = 10
@@ -42,8 +43,16 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 
 	go func() {
 		defer wg.Done()
+		var i int
 		b := make([]byte, udpPacketSize)
-		for {
+		for start := time.Now(); ; {
+			if i%10 == 0 {
+				if time.Since(start) > time.Second {
+					inbound = ""
+					break
+				}
+			}
+			i++
 			n, _, err := conn.ReadFrom(b)
 			if err != nil {
 				log.Printf("Error: UDP read error: %v", err)
