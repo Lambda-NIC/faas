@@ -3,7 +3,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:08c33babf81293271082162501e3bec25a4adc18975645dc887928b3a90320ce"
+  digest = "1:ffbdaebf65080be39ad6b632bd5068d1fdd257d7f45fa6777a47b9a499924c8f"
   name = "github.com/Lambda-NIC/faas"
   packages = [
     "gateway/handlers",
@@ -16,7 +16,7 @@
     "gateway/version",
   ]
   pruneopts = ""
-  revision = "9c992595fc09394f44b531832d78b8e76e674389"
+  revision = "1c2e10c379ccdbc917991a1fcc2ac710ccc60daa"
 
 [[projects]]
   branch = "master"

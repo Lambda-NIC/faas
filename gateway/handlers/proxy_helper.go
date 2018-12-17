@@ -17,9 +17,10 @@ const udpPacketSize = 10
 func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	var wg sync.WaitGroup
 	var inbound string
-	udpAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
+	localUDPAddr := net.UDPAddr{IP: net.ParseIP("30.30.30.105"), Port: 2222}
+	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 
-	conn, err := net.ListenUDP("udp4", &udpAddr)
+	conn, err := net.ListenUDP("udp4", &localUDPAddr)
 	if err != nil {
 		log.Printf("Error: UDP conn error: %v", err)
 		return ""
@@ -29,7 +30,7 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	wg.Add(2)
 	go func() {
 		defer wg.Done()
-		_, err := conn.WriteToUDP([]byte(data), &udpAddr)
+		_, err := conn.WriteToUDP([]byte(data), &remoteUDPAddr)
 		if err != nil {
 			log.Printf("Error: UDP write error: %v", err)
 		} else {
