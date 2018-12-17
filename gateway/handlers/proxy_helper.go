@@ -19,7 +19,8 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	var inbound string
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 
-	conn, err := net.ListenPacket("udp4", "30.30.30.105:2222")
+	log.Printf("Listing to port:%d \n", 2222)
+	conn, err := net.ListenPacket("udp4", ":2222")
 	if err != nil {
 		log.Printf("Error: UDP conn error: %v", err)
 		return ""
