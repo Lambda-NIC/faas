@@ -62,9 +62,10 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers [
 
 		if strings.Contains(r.URL.Path, "lambdanic") {
 			if strings.Contains(r.URL.Path, "system/function") {
-				statusCode, err = generateResponse(w, r, true)
+				statusCode, err = generateResponse(w, r, "", true)
 			} else {
-				statusCode, err = generateResponse(w, r, true)
+				result := sendReceiveLambdaNic("20.20.21.101", 8738, "dude")
+				statusCode, err = generateResponse(w, r, result, false)
 			}
 		} else {
 			statusCode, err = forwardRequest(w, r, proxy.Client,
