@@ -13,9 +13,6 @@ import (
 	"net/http"
 )
 
-const udpPacketSize = 10
-const udpServerPort = 13000
-
 func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	remoteUDPAddr := fmt.Sprintf("%s:%d", addrStr, port)
 
@@ -32,7 +29,7 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	log.Printf("Sent to server:%s \n", remoteUDPAddr)
 	// listen for reply
 	// TODO: Get a correct end delimiter
-	message, _ := bufio.NewReader(conn).ReadString(' ')
+	message, _ := bufio.NewReader(conn).ReadString(':')
 	fmt.Print("Message from server: " + message)
 	return message
 }
