@@ -25,7 +25,7 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	log.Printf("Listing to port:%d \n", udpServerPort)
 	conn, err := net.ListenPacket("udp4", fmt.Sprintf(":%d", udpServerPort))
 	if err != nil {
-		log.Printf("Error: UDP conn error: %v", err)
+		log.Printf("Error: UDP conn error: %v\n", err)
 		return ""
 	}
 	defer conn.Close()
@@ -35,9 +35,9 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 		defer wg.Done()
 		_, err := conn.WriteTo([]byte(data), &remoteUDPAddr)
 		if err != nil {
-			log.Printf("Error: UDP write error: %v", err)
+			log.Printf("Error: UDP write error: %v\n", err)
 		} else {
-			log.Printf("Wrote: %s to %s:%d", data, addrStr, port)
+			log.Printf("Wrote: %s to %s:%d\n", data, addrStr, port)
 		}
 	}()
 
@@ -49,22 +49,27 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 			if i%10 == 0 {
 				if time.Since(start) > time.Second {
 					inbound = ""
+					log.Printf("Request timed out.\n")
 					break
 				}
 			}
+			log.Printf("Waiting request to arrive\n.")
 			i++
 			n, _, err := conn.ReadFrom(b)
 			if err != nil {
-				log.Printf("Error: UDP read error: %v", err)
+				log.Printf("Error: UDP read error: %v\n", err)
 				continue
 			}
 			b2 := make([]byte, udpPacketSize)
 			copy(b2, b)
 			inbound = string(b2[:n])
-			return
+			break
 		}
 	}()
+
+	log.Printf("Waiting for all requests to complete\n.")
 	wg.Wait()
+	log.Printf("Done\n.")
 	return inbound
 }
 
