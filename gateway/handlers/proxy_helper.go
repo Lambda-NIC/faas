@@ -3,6 +3,7 @@
 package handlers
 
 import (
+	"bufio"
 	"bytes"
 	"fmt"
 	"io"
@@ -10,67 +11,30 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"sync"
-	"time"
 )
 
 const udpPacketSize = 10
 const udpServerPort = 13000
 
 func sendReceiveLambdaNic(addrStr string, port int, data string) string {
-	var wg sync.WaitGroup
-	var inbound string
-	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
+	remoteUDPAddr := fmt.Sprintf("%s:%d", addrStr, port)
 
-	log.Printf("Listing to port:%d \n", udpServerPort)
-	conn, err := net.ListenPacket("udp4", fmt.Sprintf(":%d", udpServerPort))
+	log.Printf("Connecting to server:%s \n", remoteUDPAddr)
+	conn, err := net.Dial("udp4", remoteUDPAddr)
 	if err != nil {
 		log.Printf("Error: UDP conn error: %v\n", err)
 		return ""
 	}
 	defer conn.Close()
-
-	wg.Add(2)
-	go func() {
-		defer wg.Done()
-		_, err := conn.WriteTo([]byte(data), &remoteUDPAddr)
-		if err != nil {
-			log.Printf("Error: UDP write error: %v\n", err)
-		} else {
-			log.Printf("Wrote: %s to %s:%d\n", data, addrStr, port)
-		}
-	}()
-
-	go func() {
-		defer wg.Done()
-		var i int
-		b := make([]byte, udpPacketSize)
-		for start := time.Now(); ; {
-			if i%10 == 0 {
-				if time.Since(start) > time.Second {
-					inbound = ""
-					log.Printf("Request timed out.\n")
-					break
-				}
-			}
-			log.Printf("Waiting request to arrive\n.")
-			i++
-			n, _, err := conn.ReadFrom(b)
-			if err != nil {
-				log.Printf("Error: UDP read error: %v\n", err)
-				continue
-			}
-			b2 := make([]byte, udpPacketSize)
-			copy(b2, b)
-			inbound = string(b2[:n])
-			break
-		}
-	}()
-
-	log.Printf("Waiting for all requests to complete\n.")
-	wg.Wait()
-	log.Printf("Done\n.")
-	return inbound
+	// send to socket
+	log.Printf("Sending to server:%s \n", remoteUDPAddr)
+	fmt.Fprintf(conn, data)
+	log.Printf("Sent to server:%s \n", remoteUDPAddr)
+	// listen for reply
+	// TODO: Get a correct end delimiter
+	message, _ := bufio.NewReader(conn).ReadString(' ')
+	fmt.Print("Message from server: " + message)
+	return message
 }
 
 func generateResponse(w http.ResponseWriter, r *http.Request,
