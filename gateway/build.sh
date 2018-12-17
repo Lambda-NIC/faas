@@ -37,7 +37,7 @@ while true; do
     esac
 done
 
-dep ensure
+dep ensure -update
 
 docker build --build-arg https_proxy=$https_proxy --build-arg http_proxy=$http_proxy \
   --build-arg GIT_COMMIT_MESSAGE="$GIT_COMMIT_MESSAGE" --build-arg GIT_COMMIT_SHA=$GIT_COMMIT_SHA \

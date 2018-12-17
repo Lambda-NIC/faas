@@ -4,6 +4,7 @@ package handlers
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -13,14 +14,15 @@ import (
 )
 
 const udpPacketSize = 10
+const udpServerPort = 13000
 
 func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	var wg sync.WaitGroup
 	var inbound string
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 
-	log.Printf("Listing to port:%d \n", 2222)
-	conn, err := net.ListenPacket("udp4", ":2222")
+	log.Printf("Listing to port:%d \n", udpServerPort)
+	conn, err := net.ListenPacket("udp4", fmt.Sprintf(":%d", udpServerPort))
 	if err != nil {
 		log.Printf("Error: UDP conn error: %v", err)
 		return ""
