@@ -3,7 +3,6 @@
 package handlers
 
 import (
-	"bufio"
 	"bytes"
 	"fmt"
 	"io"
@@ -27,11 +26,11 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 	log.Printf("Sending to server:%s \n", remoteUDPAddr)
 	fmt.Fprintf(conn, data)
 	log.Printf("Sent to server:%s \n", remoteUDPAddr)
-	// listen for reply
-	// TODO: Get a correct end delimiter
-	message, _ := bufio.NewReader(conn).ReadString(':')
-	fmt.Print("Message from server: " + message)
-	return message
+	var buf bytes.Buffer
+	io.Copy(&buf, conn)
+	fmt.Println("total size:", buf.Len())
+	fmt.Print("Message from server: " + buf.String())
+	return buf.String()
 }
 
 func generateResponse(w http.ResponseWriter, r *http.Request,
