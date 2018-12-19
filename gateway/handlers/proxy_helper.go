@@ -4,6 +4,8 @@ package handlers
 
 import (
 	"bytes"
+	"encoding/json"
+	"faas/gateway/requests"
 	"io"
 	"io/ioutil"
 	"log"
@@ -45,19 +47,29 @@ func sendReceiveLambdaNic(addrStr string, port int, data string) string {
 func generateResponse(w http.ResponseWriter, r *http.Request,
 	body string,
 	isHealth bool) (int, error) {
-	if isHealth {
-		body = "OK"
-	}
 	res := &http.Response{
 		Status:        "200 OK",
 		StatusCode:    200,
 		Proto:         "HTTP/1.1",
 		ProtoMajor:    1,
 		ProtoMinor:    1,
-		Body:          ioutil.NopCloser(bytes.NewBufferString(body)),
 		ContentLength: int64(len(body)),
 		Request:       r,
 		Header:        make(http.Header, 0),
+	}
+	if isHealth {
+		function := requests.Function{
+			Name:              "lambdanictest",
+			Replicas:          4,
+			Image:             "smartnic",
+			AvailableReplicas: 4,
+			InvocationCount:   0,
+		}
+		functionBytes, _ := json.Marshal(function)
+		res.Body = ioutil.NopCloser(bytes.NewBuffer(functionBytes))
+		res.Header.Set("Content-Type", "application/json")
+	} else {
+		res.Body = ioutil.NopCloser(bytes.NewBufferString(body))
 	}
 
 	if res.Body != nil {
