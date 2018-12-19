@@ -5,13 +5,14 @@ package handlers
 import (
 	"bytes"
 	"encoding/json"
-	"faas/gateway/requests"
 	"io"
 	"io/ioutil"
 	"log"
 	"net"
 	"net/http"
 	"time"
+
+	"github.com/Lambda-NIC/faas/gateway/requests"
 )
 
 func sendReceiveLambdaNic(addrStr string, port int, data string) string {
