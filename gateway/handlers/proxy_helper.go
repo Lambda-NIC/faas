@@ -69,6 +69,7 @@ func generateResponse(w http.ResponseWriter, r *http.Request,
 		functionBytes, _ := json.Marshal(function)
 		res.Body = ioutil.NopCloser(bytes.NewBuffer(functionBytes))
 		res.Header.Set("Content-Type", "application/json")
+		res.ContentLength = int64(len(functionBytes))
 	} else {
 		res.Body = ioutil.NopCloser(bytes.NewBufferString(body))
 	}
