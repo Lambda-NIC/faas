@@ -20,7 +20,7 @@ func sendReceiveLambdaNic(port int, jobID int, data string) string {
 	// TODO: This should be changed to cache
 	randIdx := rand.Intn(len(SmartNICs))
 	addrStr := SmartNICs[randIdx]
-	log.Printf("Proxying to %s\n", addrStr)
+	log.Printf("Proxying to %s with id %d\n", addrStr, jobID)
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 
 	//log.Printf("Connecting to server:%s \n", remoteUDPAddr.String())
