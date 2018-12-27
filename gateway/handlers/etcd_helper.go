@@ -13,17 +13,6 @@ import (
 	"go.etcd.io/etcd/client"
 )
 
-// LambdaNIC: Create etcd connection for saving distributed values.
-const etcdMasterIP string = "127.0.0.1"
-const etcdPort string = "2379"
-
-// KeysAPI is a the client api.
-var KeysAPI client.KeysAPI = CreateEtcdClient(etcdMasterIP, etcdPort)
-
-// SmartNICs contain the list of SmartNICs available.
-// TODO: Should change to cache and make it updatable.
-var SmartNICs = GetSmartNICS(KeysAPI)
-
 //FunctionDeployment contains replicas for each functions
 type FunctionDeployment struct {
 	SmartNIC    string

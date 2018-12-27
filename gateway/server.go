@@ -12,6 +12,7 @@ import (
 	"github.com/Lambda-NIC/faas/gateway/handlers"
 	"github.com/Lambda-NIC/faas/gateway/scaling"
 	"github.com/gorilla/mux"
+	"go.etcd.io/etcd/client"
 
 	"github.com/Lambda-NIC/faas-provider/auth"
 	"github.com/Lambda-NIC/faas/gateway/metrics"
@@ -19,6 +20,10 @@ import (
 	"github.com/Lambda-NIC/faas/gateway/types"
 	natsHandler "github.com/Lambda-NIC/nats-queue-worker/handler"
 )
+
+// LambdaNIC: Create etcd connection for saving distributed values.
+const etcdMasterIP string = "127.0.0.1"
+const etcdPort string = "2379"
 
 func main() {
 
@@ -80,15 +85,50 @@ func main() {
 		functionURLTransformer = nilURLTransformer
 	}
 
-	faasHandlers.Proxy = handlers.MakeForwardingProxyHandler(reverseProxy, functionNotifiers, functionURLResolver, functionURLTransformer)
+	var keysAPI client.KeysAPI = handlers.CreateEtcdClient(etcdMasterIP, etcdPort)
+	var smartNICs []string = handlers.GetSmartNICS(keysAPI)
+	counter := 0
+	for (smartNICs == nil || len(smartNICs) == 0) && counter < 100 {
+		smartNICs = handlers.GetSmartNICS(keysAPI)
+		counter++
+		if counter == 100 {
+			log.Fatal("Could not retrieve SmartNICs")
+		}
+	}
 
-	faasHandlers.RoutelessProxy = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
-	faasHandlers.ListFunctions = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
-	faasHandlers.DeployFunction = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
-	faasHandlers.DeleteFunction = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
-	faasHandlers.UpdateFunction = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
-	faasHandlers.QueryFunction = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
-	faasHandlers.InfoHandler = handlers.MakeInfoHandler(handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer))
+	faasHandlers.Proxy =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			functionNotifiers, functionURLResolver, functionURLTransformer,
+			smartNICs)
+
+	faasHandlers.RoutelessProxy =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
+	faasHandlers.ListFunctions =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
+	faasHandlers.DeployFunction =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
+	faasHandlers.DeleteFunction =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
+	faasHandlers.UpdateFunction =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
+	faasHandlers.QueryFunction =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
+	faasHandlers.InfoHandler =
+		handlers.MakeInfoHandler(
+			handlers.MakeForwardingProxyHandler(reverseProxy,
+				forwardingNotifiers, urlResolver, nilURLTransformer, smartNICs))
 
 	alertHandler := plugin.NewExternalServiceQuery(*config.FunctionsProviderURL, credentials)
 	faasHandlers.Alert = handlers.MakeAlertHandler(alertHandler)
@@ -108,7 +148,10 @@ func main() {
 	faasHandlers.ListFunctions = metrics.AddMetricsHandler(faasHandlers.ListFunctions, prometheusQuery)
 	faasHandlers.Proxy = handlers.MakeCallIDMiddleware(faasHandlers.Proxy)
 
-	faasHandlers.ScaleFunction = handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)
+	faasHandlers.ScaleFunction =
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)
 
 	if credentials != nil {
 		faasHandlers.UpdateFunction =
@@ -183,7 +226,10 @@ func main() {
 
 	metricsHandler := metrics.PrometheusHandler()
 	r.Handle("/metrics", metricsHandler)
-	r.HandleFunc("/healthz", handlers.MakeForwardingProxyHandler(reverseProxy, forwardingNotifiers, urlResolver, nilURLTransformer)).Methods(http.MethodGet)
+	r.HandleFunc("/healthz",
+		handlers.MakeForwardingProxyHandler(reverseProxy,
+			forwardingNotifiers, urlResolver, nilURLTransformer,
+			smartNICs)).Methods(http.MethodGet)
 
 	r.Handle("/", http.RedirectHandler("/ui/", http.StatusMovedPermanently)).Methods(http.MethodGet)
 
