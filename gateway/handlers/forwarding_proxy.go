@@ -9,6 +9,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"regexp"
@@ -50,7 +51,8 @@ type URLPathTransformer interface {
 // MakeForwardingProxyHandler create a handler which forwards HTTP requests
 func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy,
 	notifiers []HTTPNotifier, baseURLResolver BaseURLResolver,
-	urlPathTransformer URLPathTransformer) http.HandlerFunc {
+	urlPathTransformer URLPathTransformer,
+	smartNICs []string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		baseURL := baseURLResolver.Resolve(r)
 		originalURL := r.URL.String()
@@ -78,7 +80,10 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy,
 					if jobIDErr != nil {
 						log.Printf("Error paring job ID: %v\n", err)
 					} else {
-						result := sendReceiveLambdaNic(4369, jobID, "dude")
+						// TODO: This should be changed to cache
+						randIdx := rand.Intn(len(smartNICs))
+						addrStr := smartNICs[randIdx]
+						result := sendReceiveLambdaNic(addrStr, 4369, jobID, "dude")
 						statusCode, err = generateResponse(w, r, result, false)
 					}
 				}
