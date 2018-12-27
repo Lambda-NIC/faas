@@ -6,6 +6,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"encoding/json"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -31,10 +32,11 @@ func sendReceiveLambdaNic(addrStr string, port int,
 
 	// send to socket
 	//log.Printf("Sending to server:%s \n", remoteUDPAddr.String())
-	buf := new(bytes.Buffer)
-	binary.Write(buf, binary.BigEndian, jobID)
-	dataBytes := []byte(data)
-	_, err = conn.Write(append(buf.Bytes(), dataBytes...))
+	bs := make([]byte, 4)
+	binary.LittleEndian.PutUint32(bs, uint32(jobID))
+	dataBytes := append(bs, []byte(data)...)
+	fmt.Printf("%#v\n", dataBytes)
+	_, err = conn.Write(dataBytes)
 	if err != nil {
 		log.Printf("Error in sending to server\n")
 		return ""
