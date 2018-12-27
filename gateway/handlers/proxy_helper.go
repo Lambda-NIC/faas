@@ -8,6 +8,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net"
 	"net/http"
 	"time"
@@ -15,7 +16,11 @@ import (
 	"github.com/Lambda-NIC/faas/gateway/requests"
 )
 
-func sendReceiveLambdaNic(addrStr string, port int, data string) string {
+func sendReceiveLambdaNic(port int, jobID int, data string) string {
+	// TODO: This should be changed to cache
+	randIdx := rand.Intn(len(SmartNICs))
+	addrStr := SmartNICs[randIdx]
+	log.Printf("Proxying to %s\n", addrStr)
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 
 	//log.Printf("Connecting to server:%s \n", remoteUDPAddr.String())

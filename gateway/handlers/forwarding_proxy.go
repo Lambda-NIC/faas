@@ -7,6 +7,7 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -47,7 +48,9 @@ type URLPathTransformer interface {
 }
 
 // MakeForwardingProxyHandler create a handler which forwards HTTP requests
-func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers []HTTPNotifier, baseURLResolver BaseURLResolver, urlPathTransformer URLPathTransformer) http.HandlerFunc {
+func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy,
+	notifiers []HTTPNotifier, baseURLResolver BaseURLResolver,
+	urlPathTransformer URLPathTransformer) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		baseURL := baseURLResolver.Resolve(r)
 		originalURL := r.URL.String()
@@ -66,8 +69,19 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy, notifiers [
 			} else {
 				// NOTE: If originating from a machine with smartnic, use 8738
 				// else use 4369
-				result := sendReceiveLambdaNic("20.20.21.101", 4369, "dude")
-				statusCode, err = generateResponse(w, r, result, false)
+				body, readErr := ioutil.ReadAll(r.Body)
+				if readErr != nil {
+					log.Printf("Error reading body: %v\n", err)
+				} else {
+					bodyStr := string(body)
+					jobID, jobIDErr := strconv.Atoi(bodyStr)
+					if jobIDErr != nil {
+						log.Printf("Error paring job ID: %v\n", err)
+					} else {
+						result := sendReceiveLambdaNic(4369, jobID, "dude")
+						statusCode, err = generateResponse(w, r, result, false)
+					}
+				}
 			}
 		} else {
 			statusCode, err = forwardRequest(w, r, proxy.Client,
