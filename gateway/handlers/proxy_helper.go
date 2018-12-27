@@ -6,7 +6,6 @@ import (
 	"bytes"
 	"encoding/binary"
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -19,7 +18,6 @@ import (
 
 func sendReceiveLambdaNic(addrStr string, port int,
 	jobID int, data string) string {
-	log.Printf("Proxying to %s with id %d\n", addrStr, jobID)
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 
 	//log.Printf("Connecting to server:%s \n", remoteUDPAddr.String())
@@ -33,9 +31,8 @@ func sendReceiveLambdaNic(addrStr string, port int,
 	// send to socket
 	//log.Printf("Sending to server:%s \n", remoteUDPAddr.String())
 	bs := make([]byte, 4)
-	binary.LittleEndian.PutUint32(bs, uint32(jobID))
+	binary.BigEndian.PutUint32(bs, uint32(jobID))
 	dataBytes := append(bs, []byte(data)...)
-	fmt.Printf("%#v\n", dataBytes)
 	_, err = conn.Write(dataBytes)
 	if err != nil {
 		log.Printf("Error in sending to server\n")
