@@ -16,12 +16,15 @@ import (
 	"github.com/Lambda-NIC/faas/gateway/requests"
 )
 
+const localPort = 2222
+
 func sendReceiveLambdaNic(addrStr string, port int,
 	jobID int, data string) string {
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
+	localUDPAddr := net.UDPAddr{Port: localPort}
 
 	//log.Printf("Connecting to server:%s \n", remoteUDPAddr.String())
-	conn, err := net.DialUDP("udp4", nil, &remoteUDPAddr)
+	conn, err := net.DialUDP("udp4", &localUDPAddr, &remoteUDPAddr)
 	if err != nil {
 		log.Printf("Error: UDP conn error: %v\n", err)
 		return ""
