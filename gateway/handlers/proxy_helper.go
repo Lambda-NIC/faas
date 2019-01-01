@@ -18,12 +18,26 @@ import (
 )
 
 const localPort = 2222
-const localIp = "10.10.20.105"
+
+var localIP = GetOutboundIP()
+
+// GetOutboundIP Get preferred outbound ip of this machine
+func GetOutboundIP() net.IP {
+	conn, err := net.Dial("udp", "8.8.8.8:80")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	localAddr := conn.LocalAddr().(*net.UDPAddr)
+
+	return localAddr.IP
+}
 
 func sendReceiveLambdaNic(addrStr string, port int,
 	jobID int, data string) string {
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
-	localUDPAddr := net.UDPAddr{IP: net.ParseIP(localIp), Port: localPort}
+	localUDPAddr := net.UDPAddr{IP: localIP, Port: localPort}
 
 	log.Printf("Connecting to server:%s \n", remoteUDPAddr.String())
 	conn, err := net.DialUDP("udp4", &localUDPAddr, &remoteUDPAddr)
