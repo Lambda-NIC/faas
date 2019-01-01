@@ -6,7 +6,6 @@ import (
 	"bytes"
 	"encoding/binary"
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -39,7 +38,8 @@ func sendReceiveLambdaNic(addrStr string, port int,
 	remoteUDPAddr := net.UDPAddr{IP: net.ParseIP(addrStr), Port: port}
 	localUDPAddr := net.UDPAddr{IP: localIP, Port: localPort}
 
-	log.Printf("Connecting to server:%s \n", remoteUDPAddr.String())
+	//log.Printf("Connecting from %s to %s \n",
+	//	localUDPAddr.String(), remoteUDPAddr.String())
 	conn, err := net.DialUDP("udp4", &localUDPAddr, &remoteUDPAddr)
 	if err != nil {
 		log.Printf("Error: UDP conn error: %v\n", err)
@@ -48,7 +48,8 @@ func sendReceiveLambdaNic(addrStr string, port int,
 	defer conn.Close()
 
 	// send to socket
-	log.Printf("Sending to server:%s \n", remoteUDPAddr.String())
+	//log.Printf("Sending from %s to %s \n",
+	//	localUDPAddr.String(), remoteUDPAddr.String())
 	bs := make([]byte, 4)
 	binary.BigEndian.PutUint32(bs, uint32(jobID))
 	dataBytes := append(bs, []byte(data)...)
@@ -58,8 +59,8 @@ func sendReceiveLambdaNic(addrStr string, port int,
 		return ""
 	}
 
-	log.Printf("Sent %d bytes to server:%s\n", len(dataBytes),
-		remoteUDPAddr.String())
+	//log.Printf("Sent %d bytes to server:%s\n", len(dataBytes),
+	// remoteUDPAddr.String())
 	conn.SetReadDeadline(time.Now().Add(2 * time.Second))
 	msg := make([]byte, 32)
 	n, err := conn.Read(msg)
@@ -68,7 +69,7 @@ func sendReceiveLambdaNic(addrStr string, port int,
 		return ""
 	}
 
-	fmt.Printf("Message from server: %d bytes: %s\n", n, string(msg[:n]))
+	//fmt.Printf("Message from server: %d bytes: %s\n", n, string(msg[:n]))
 	return string(msg[:n])
 }
 
