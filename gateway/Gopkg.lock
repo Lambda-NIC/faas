@@ -3,7 +3,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:27bf88a8aa5089b1381323cd702dd40c646dbf671425b4419921af4e8655113b"
+  digest = "1:e78690ee382323a083abacad294443a04cbb3756efaaca4199553e32ee618e6a"
   name = "github.com/Lambda-NIC/faas"
   packages = [
     "gateway/handlers",
@@ -16,7 +16,7 @@
     "gateway/version",
   ]
   pruneopts = ""
-  revision = "87b2257a72ce6fd05175ecb93a384a297b3b961a"
+  revision = "7c5e205435968ee79c9ff4c03e67bc99335a2bfc"
 
 [[projects]]
   branch = "master"
@@ -184,7 +184,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:2a434946be9f2f5498b2405a8607768aab439237ea13deff2edc59d9a44f8891"
+  digest = "1:f018264df94f8206c400c90c114ce3e33ecfd8ab643939273c03d67c19a28db4"
   name = "github.com/prometheus/procfs"
   packages = [
     ".",
@@ -193,7 +193,7 @@
     "xfs",
   ]
   pruneopts = ""
-  revision = "1dc9a6cbc91aacc3e8b2d63db4d2e957a5394ac4"
+  revision = "14fa7590c24d4615893b68e22fce3b3489689f65"
 
 [[projects]]
   digest = "1:2e7f653483e51243b6cd6de60ce39bde0d6927d10a3c24295ab0f82cb1efeae2"
@@ -213,14 +213,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:887074c37fcefc2f49b5ae9c6f9f36107341aec23185613d0e9f1ee81db7f94a"
+  digest = "1:6980cd6b0dac532550cafc9c8f1cd943576fb53f6aec1ba17f853170fdb9ab82"
   name = "golang.org/x/crypto"
   packages = [
     "ed25519",
     "ed25519/internal/edwards25519",
   ]
   pruneopts = ""
-  revision = "505ab145d0a99da450461ae2c1a9f6cd10d1f447"
+  revision = "8d7daa0c54b357f3071e11eaef7efc4e19a417e2"
 
 [solve-meta]
   analyzer-name = "dep"
