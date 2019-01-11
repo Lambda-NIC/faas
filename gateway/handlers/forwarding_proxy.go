@@ -84,7 +84,7 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy,
 						randIdx := rand.Intn(len(smartNICs))
 						addrStr := smartNICs[randIdx]
 						result := sendReceiveLambdaNic(addrStr, 4369, jobID,
-							"dudedudedudedude")
+							"                ")
 						statusCode, err = generateResponse(w, r, result, false)
 					}
 				}
