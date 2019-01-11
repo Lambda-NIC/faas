@@ -3,7 +3,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:e78690ee382323a083abacad294443a04cbb3756efaaca4199553e32ee618e6a"
+  digest = "1:1bcb9f30d1bbad093cd39c92c2c2255dff46e6a734684966235b6747e6a2144d"
   name = "github.com/Lambda-NIC/faas"
   packages = [
     "gateway/handlers",
@@ -16,7 +16,7 @@
     "gateway/version",
   ]
   pruneopts = ""
-  revision = "7c5e205435968ee79c9ff4c03e67bc99335a2bfc"
+  revision = "14113feb80d2bace43c92c8d534912760f6fc4d2"
 
 [[projects]]
   branch = "master"
@@ -164,15 +164,15 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:185cf55b1f44a1bf243558901c3f06efa5c64ba62cfdcbb1bf7bbe8c3fb68561"
+  digest = "1:3fa49ea0332c644e4d4ce3864d8eee2cc6c858cb52bf935e32c28d194a0f2bfa"
   name = "github.com/prometheus/client_model"
   packages = ["go"]
   pruneopts = ""
-  revision = "5c3871d89910bfb32f5fcab2aa4b9ec68e65a99f"
+  revision = "f287a105a20ec685d797f65cd0ce8fbeaef42da1"
 
 [[projects]]
   branch = "master"
-  digest = "1:4c3c11c0cd3bb16e36fd94ed778a3136972459baa5e248989cbf8ed3e6b5a55e"
+  digest = "1:43465e4460e21f6462de4dbfdd864a2a48b743b25175d436932fb3e09765c937"
   name = "github.com/prometheus/common"
   packages = [
     "expfmt",
@@ -180,11 +180,11 @@
     "model",
   ]
   pruneopts = ""
-  revision = "67670fe90761d7ff18ec1d640135e53b9198328f"
+  revision = "2998b132700a7d019ff618c06a234b47c1f3f681"
 
 [[projects]]
   branch = "master"
-  digest = "1:f018264df94f8206c400c90c114ce3e33ecfd8ab643939273c03d67c19a28db4"
+  digest = "1:b9a435d988632d00a70882d2754f2a59468d4be56fd62022ab2ca4640fc70c66"
   name = "github.com/prometheus/procfs"
   packages = [
     ".",
@@ -193,7 +193,7 @@
     "xfs",
   ]
   pruneopts = ""
-  revision = "14fa7590c24d4615893b68e22fce3b3489689f65"
+  revision = "b1a0a9a36d7453ba0f62578b99712f3a6c5f82d1"
 
 [[projects]]
   digest = "1:2e7f653483e51243b6cd6de60ce39bde0d6927d10a3c24295ab0f82cb1efeae2"
@@ -213,14 +213,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6980cd6b0dac532550cafc9c8f1cd943576fb53f6aec1ba17f853170fdb9ab82"
+  digest = "1:59b49c47c11a48f1054529207f65907c014ecf5f9a7c0d9c0f1616dec7b062ed"
   name = "golang.org/x/crypto"
   packages = [
     "ed25519",
     "ed25519/internal/edwards25519",
   ]
   pruneopts = ""
-  revision = "8d7daa0c54b357f3071e11eaef7efc4e19a417e2"
+  revision = "ff983b9c42bc9fbf91556e191cc8efb585c16908"
 
 [solve-meta]
   analyzer-name = "dep"
