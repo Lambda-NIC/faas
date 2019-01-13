@@ -3,7 +3,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:1bcb9f30d1bbad093cd39c92c2c2255dff46e6a734684966235b6747e6a2144d"
+  digest = "1:ed932d08c7641c4420962b6307573a2fd4964bd71dd04c12380ce9da6e195a61"
   name = "github.com/Lambda-NIC/faas"
   packages = [
     "gateway/handlers",
@@ -16,7 +16,7 @@
     "gateway/version",
   ]
   pruneopts = ""
-  revision = "14113feb80d2bace43c92c8d534912760f6fc4d2"
+  revision = "9f30beffd667eb918f240f7a9a83c40abd8e599b"
 
 [[projects]]
   branch = "master"
@@ -43,7 +43,7 @@
   revision = "3a771d992973f24aa725d07868b467d1ddfceafb"
 
 [[projects]]
-  digest = "1:600d64f7857a14d7715ce2795868c76b85e634fc13aba93b23431039fed2d9ea"
+  digest = "1:812ef5c0ff0dc70d100b57e2bec61aaf09b54873048f00bf685be3104943920b"
   name = "github.com/coreos/etcd"
   packages = [
     "pkg/pathutil",
@@ -52,8 +52,8 @@
     "version",
   ]
   pruneopts = ""
-  revision = "27fc7e2296f506182f58ce846e48f36b34fe6842"
-  version = "v3.3.10"
+  revision = "2cf9e51d2a78003b164c2998886158e60ded1cbb"
+  version = "v3.3.11"
 
 [[projects]]
   digest = "1:3c3f68ebab415344aef64363d23471e953a4715645115604aaf57923ae904f5e"
@@ -204,12 +204,12 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:600d64f7857a14d7715ce2795868c76b85e634fc13aba93b23431039fed2d9ea"
+  digest = "1:812ef5c0ff0dc70d100b57e2bec61aaf09b54873048f00bf685be3104943920b"
   name = "go.etcd.io/etcd"
   packages = ["client"]
   pruneopts = ""
-  revision = "27fc7e2296f506182f58ce846e48f36b34fe6842"
-  version = "v3.3.10"
+  revision = "2cf9e51d2a78003b164c2998886158e60ded1cbb"
+  version = "v3.3.11"
 
 [[projects]]
   branch = "master"
