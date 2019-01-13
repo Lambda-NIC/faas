@@ -64,10 +64,18 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy,
 
 		var statusCode int
 		var err error
+		isLambdaNIC := strings.Contains(r.URL.Path, "lambdanic")
+		isBareMetal := strings.Contains(r.URL.Path, "baremetal")
 
-		if strings.Contains(r.URL.Path, "lambdanic") {
+		if isLambdaNIC || isBareMetal {
 			if strings.Contains(r.URL.Path, "system/function") {
-				statusCode, err = generateResponse(w, r, "", true)
+				if isLambdaNIC {
+					statusCode, err = generateResponse(w, r, "lambdanictest", "smartnic",
+						"", true)
+				} else if isBareMetal {
+					statusCode, err = generateResponse(w, r, "baremetaltest", "baremetal",
+						"", true)
+				}
 			} else {
 				// NOTE: If originating from a machine with smartnic, use 8738
 				// else use 4369
@@ -83,9 +91,21 @@ func MakeForwardingProxyHandler(proxy *types.HTTPClientReverseProxy,
 						// TODO: This should be changed to cache
 						randIdx := rand.Intn(len(smartNICs))
 						addrStr := smartNICs[randIdx]
-						result := sendReceiveLambdaNic(addrStr, 4369, jobID,
-							"                ")
-						statusCode, err = generateResponse(w, r, result, false)
+						result := ""
+						if isLambdaNIC {
+							result = sendReceiveLambdaNic(addrStr, 4369, jobID,
+								"                ")
+							statusCode, err = generateResponse(w, r,
+								"lambdanictest",
+								"smartnic",
+								result, false)
+						} else if isBareMetal {
+							result = sendReceiveLambdaNic(addrStr, 10000, jobID,
+								"                ")
+							statusCode, err = generateResponse(w, r, "baremetaltest",
+								"baremetal",
+								result, false)
+						}
 					}
 				}
 			}

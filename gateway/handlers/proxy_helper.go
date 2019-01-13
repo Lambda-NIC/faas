@@ -77,6 +77,8 @@ func sendReceiveLambdaNic(addrStr string, port int,
 }
 
 func generateResponse(w http.ResponseWriter, r *http.Request,
+	serviceName string,
+	imageName string,
 	body string,
 	isHealth bool) (int, error) {
 	res := &http.Response{
@@ -91,9 +93,9 @@ func generateResponse(w http.ResponseWriter, r *http.Request,
 	}
 	if isHealth {
 		function := requests.Function{
-			Name:              "lambdanictest",
+			Name:              serviceName,
 			Replicas:          4,
-			Image:             "smartnic",
+			Image:             imageName,
 			AvailableReplicas: 4,
 			InvocationCount:   0,
 		}
