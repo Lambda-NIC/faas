@@ -64,7 +64,7 @@ func sendReceiveLambdaNic(addrStr string, port int,
 
 	//log.Printf("Sent %d bytes to server:%s\n", len(dataBytes),
 	// remoteUDPAddr.String())
-	conn.SetReadDeadline(time.Now().Add(3 * time.Second))
+	conn.SetReadDeadline(time.Now().Add(20 * time.Second))
 	msg := make([]byte, 32)
 	n, err := conn.Read(msg)
 	if err != nil {
